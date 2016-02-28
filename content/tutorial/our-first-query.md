@@ -1,9 +1,11 @@
 ---
 title: Our First Query
-order: 1
+order: 2
 ---
 
-The first thing our viewers want is a list of our blog posts, so that's what we're going to give them. Here's the query we want to support
+The first thing our viewers want is a list of our blog posts, so
+that's what we're going to give them. Here's the query we want to
+support:
 
 ```
 {
@@ -14,7 +16,11 @@ The first thing our viewers want is a list of our blog posts, so that's what we'
 }
 ```
 
-To do this we're going to need a schema. Let's create some basic types for our schema, starting with a Post. GraphQL has several fundamental types on top of which all of our types will be built. The [Object](http://hexdocs.pm/absinthe/Absinthe.Type.Object.html) type is the right one to use when representing a set of key value pairs.
+To do this we're going to need a schema. Let's create some basic types
+for our schema, starting with a Post. GraphQL has several fundamental
+types on top of which all of our types will be built. The
+[Object](http://hexdocs.pm/absinthe/Absinthe.Type.Object.html) type is
+the right one to use when representing a set of key value pairs.
 
 ```elixir
 # web/schema/types.ex
