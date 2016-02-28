@@ -1,0 +1,25 @@
+{
+  "name": "absinthe-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bruce Williams",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^6.3.3",
+    "browser-sync": "^2.11.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-postcss": "^6.1.0",
+    "gulp-shell": "^0.5.2",
+    "gulp-size": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.5",
+    "postcss-cssnext": "^2.4.0",
+    "postcss-each": "^0.9.1",
+    "precss": "^1.4.0"
+  }
+}
