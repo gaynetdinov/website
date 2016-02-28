@@ -76,6 +76,8 @@ gulp.task("serve", ["server", "watch"], function() {
 
 gulp.task('build', ['html', 'styles']);
 
+gulp.task('default', ['watch']);
+
 // Handle the error
 function errorHandler (error) {
   console.log(error.toString());

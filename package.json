@@ -11,6 +11,7 @@
   "dependencies": {
     "autoprefixer": "^6.3.3",
     "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-load-plugins": "^1.2.0",
     "gulp-postcss": "^6.1.0",
