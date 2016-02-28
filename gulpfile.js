@@ -39,7 +39,8 @@ gulp.task("server", function() {
     port: 4000,
     server: {
       baseDir: "output"
-    }
+    },
+    browser: "google chrome"
   });
 });
 
@@ -76,7 +77,7 @@ gulp.task("serve", ["server", "watch"], function() {
 
 gulp.task('build', ['html', 'styles']);
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['build', 'serve']);
 
 // Handle the error
 function errorHandler (error) {

@@ -19,6 +19,7 @@
     "gulp-size": "^2.0.0",
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.5",
+    "normalize.css": "3.0.3",
     "postcss-cssnext": "^2.4.0",
     "postcss-each": "^0.9.1",
     "precss": "^1.4.0"
