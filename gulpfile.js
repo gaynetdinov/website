@@ -66,6 +66,7 @@ gulp.task('html', function(cb) {
   exec("bundle exec nanoc compile", {maxBuffer: 1024 * 1000}, function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
+    browserSync.reload();
     cb(err);
   });
 });
