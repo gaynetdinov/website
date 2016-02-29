@@ -5,5 +5,6 @@
 #main {
   @extend %nested-margin;
   background-color: $white;
+  border-radius: 3px;
   padding: 15px;
 } /* #main */
