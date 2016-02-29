@@ -29,48 +29,32 @@ Let's define our time type:
 ```elixir
 # in web/schema/types.ex
 
-@absinthe :type
-def time do
-  %Type.Scalar{
-    description: "ISOz time",
-    parse: &Timex.DateFormat.parse(&1, "{ISOz}"),
-    serialize: &Timex.DateFormat.format!(&1, "{ISOz}")
-  }
+scalar :time, description: "ISOz time" do
+  parse &Timex.DateFormat.parse(&1, "{ISOz}")
+  serialize &Timex.DateFormat.format!(&1, "{ISOz}")
 end
 ```
 
 Our post should now look like:
 
 ```elixir
-@absinthe :type
-def post do
-  %Type.Object{
-    fields: fields(
-      title: [type: :string],
-      body: [type: :string],
-      posted_at: [type: :time]
-    )
-  }
+object :post do
+  field :title, :string
+  field :body, :string
+  field :posted_at, :time
 end
 ```
 
 And our mutation in the schema should look like:
 
 ```elixir
-def mutation do
-  %Type.Object{
-    fields: fields(
-      post: [
-        type: :post,
-        args: args(
-          title: [type: non_null(:string)],
-          body: [type: non_null(:string)],
-          posted_at: [type: non_null(:time)],
-        ),
-        resolve: &Resolver.Post.create/3,
-      ]
-    )
-  }
+mutation do
+  field :post, type: :post do
+    arg :title, non_null(:string)
+    arg :body, non_null(:string)
+    arg :posted_at, non_null(:time)
+    resolve &Resolver.Post.create/2
+  end
 end
 ```
 

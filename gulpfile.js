@@ -58,7 +58,7 @@ gulp.task("server", function() {
   });
 });
 
-gulp.task("watch:html", function() {
+gulp.task("watch:html", ['html'], function() {
   gulp.watch([
     "nanoc.yaml",
     "Rules",
@@ -75,18 +75,17 @@ gulp.task("watch:images", function() {
   ], ["images"]);
 });
 
-gulp.task("watch:styles", function() {
+gulp.task("watch:styles", ['styles'], function() {
   gulp.watch([
     "stylesheets/**/*"
   ], ["styles"]);
 });
 
-gulp.task("watch:scripts", function() {
+gulp.task("watch:scripts", ['scripts'], function() {
   gulp.watch([
     "scripts/**/*"
   ], ["scripts"]);
 });
-
 
 gulp.task("watch", ["watch:html", "watch:styles", "watch:scripts", "watch:images"]);
 

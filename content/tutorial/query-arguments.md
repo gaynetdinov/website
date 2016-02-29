@@ -24,46 +24,28 @@ argument.
 ```elixir
 # in web/schema/types
 
-@absinthe :type
-def user do
-  %Type.Object{
-    fields: fields(
-      id: [type: :id],
-      name: [type: :string],
-      email: [type: :string],
-      posts: [type: :post]
-    )
-  }
+object :user do
+  field :id, :id
+  field :name, :string
+  field :email, :string
+  field :posts, list_of(:post)
 end
 
-@absinthe :type
-def post do
-  %Type.Object{
-    fields: fields(
-      title: [type: :string],
-      body: [type: :string],
-      author: [type: :user],
-    )
-  }
+object :post do
+  field :title, :string
+  field :body, :string
+  field :author, :user
 end
 
 # in web/schema.ex
-def query do
-  %Type.Object{
-    fields: fields(
-      posts: [
-        type: list_of(:post),
-        resolve: &Resolver.Post.all/3
-      ]
-      user: [
-        type: :user,
-        args: args(
-          id: [type: non_null(:id)]
-        )
-        resolve: &Resolver.User.find/3
-      ]
-    )
-  }
+query do
+  field :posts, list_of(:post) do
+    resolve &Resolver.Post.all/2
+  end
+  field :user, type: :user do
+    arg :id, non_null(:id)
+    resolve &Resolver.User.find/2
+  end
 end
 ```
 
@@ -74,7 +56,7 @@ them at work, let's look at our resolver.
 ```elixir
 # web/resolver/user.ex
 defmodule Blog.Resolver.User do
-  def find(_obj, %{id: id}, _exe) do
+  def find(%{id: id}, _info) do
     case Blog.Repo.get(User, id) do
       nil  -> {:error, "User id #{id} not found"}
       user -> {:ok, user}
@@ -84,17 +66,17 @@ end
 ```
 
 The second argument to every resolve function contains the GraphQL
-arguments of the query / mutation. Our schema marks the id argument as
+arguments of the query / mutation. Our schema marks the `:id` argument as
 `non_null`, so we can be certain we will receive it and just pattern
-match directly. If the id is left out of the query, Absinthe will
+match directly. If `:id` is left out of the query, Absinthe will
 return an informative error to the user, and the resolve function will
 not be called.
 
-Note also that the id parameter is an atom, and not a binary like
+Note also that the `:id` parameter is an atom, and not a binary like
 ordinary phoenix parameters. Absinthe knows what arguments will be
-used ahead of time, and will cull any extraneous arguments given to a
-query. This means that all arguments can be supplied to the resolve
-functions with atom keys.
+used ahead of time, will coerce as appropriate -- and will cull any extraneous
+arguments given to a query. This means that all arguments can be supplied to the
+resolve functions with atom keys.
 
 Finally you'll see that we need to handle the possibility that the
 query, while valid from GraphQL's perspective, may still ask for a
