@@ -3,12 +3,17 @@
 -------------------------------------------------------------------  */
 
 #main-navigation {
-  @extend %list-in-disguise;
+  clear: both;
+  margin-top: 20px;
+
+  ol {
+    @extend %list-in-disguise;
+  }
 
   li {
-    float: left;
+    display: inline-block;
     text-align: center;
-    width: 20%;
+    width: 19%;
   }
 
   a {
