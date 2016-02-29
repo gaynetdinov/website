@@ -69,7 +69,7 @@ gulp.task("watch:html", ['html'], function() {
   ], ["html"]);
 });
 
-gulp.task("watch:images", function() {
+gulp.task("watch:images", ['images'], function() {
   gulp.watch([
     "images/**/*"
   ], ["images"]);
