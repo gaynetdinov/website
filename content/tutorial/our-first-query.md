@@ -25,60 +25,66 @@ the right one to use when representing a set of key value pairs.
 ```elixir
 # web/schema/types.ex
 defmodule Blog.Schema.Types do
-  use Absinthe.Type.Definitions
-  alias Absinthe.Type
+  use Absinthe.Schema.Notation
 
-  @absinthe :type
-  def post do
-    %Type.Object{
-      fields: fields(
-        id: [type: :id],
-        title: [type: :string],
-        body: [type: :string]
-      )
-    }
+  object :post do
+    field :id, :id
+    field :title, :string
+    field :body, :string
   end
 end
 ```
 
-You'll notice we use the `fields()` function to define the fields on our Post object. This is just a convenience function that fills out a bit of GraphQL boilerplate for each of the fields we define. See [Absinthe.Type.Definitions](http://hexdocs.pm/absinthe/Absinthe.Type.Definitions.html#fields/1) for more information.
+The canonical GraphQL name of the type is defined automatically for
+us as a TitleCased version of the identifier (in this case `:post` gives us
+`"Post"`). We could change this by passing an explicit value to the `object`
+macro as `:name`.
 
-If you're curious what the type `:id` is used by the `:id` field, see the [GraphQL spec](https://facebook.github.io/graphql/#sec-ID). In our case it's our regular Ecto id, but always serialized as a string.
+If you're curious what the type `:id` is used by the `:id` field, see the
+[GraphQL spec](https://facebook.github.io/graphql/#sec-ID).
+In our case it's our regular Ecto id, but always serialized as a string.
 
-With our type completed we can now write a basic schema that will let us query a set of posts.
+With our type completed we can now write a basic schema that will let us query a
+set of posts.
 
 ```elixir
 # web/schema.ex
 defmodule Blog.Schema do
-  use Absinthe.Schema, type_modules: [Blog.Schema.Types]
-  alias Absinthe.Type
+  use Absinthe.Schema
+  import_types Blog.Schema.Types
+
   alias Blog.Resolver
 
-  def query do
-    %Type.Object{
-      fields: fields(
-        posts: [
-          type: list_of(:post),
-          resolve: &Resolver.Post.all/3
-        ]
-      )
-    }
+  query do
+    field :posts, list_of(:post) do
+      resolve: &Resolver.Post.all/2
+    end
   end
+
 end
 
 # web/resolver/post.ex
 defmodule Blog.Resolver.Post do
-  def all(_obj, _args, _exe) do
+  def all(_args, _info) do
     {:ok, Blog.Repo.all(Post)}
   end
 end
 ```
 
-Queries are defined as fields inside the GraphQL object returned by our `query` function. We created a posts query that has a type `list_of(:post)` and is resolved by our `Blog.Resolver.Post.all` function. Later we'll get into what the arguments to resolver functions are; don't worry about it for now. The resolver function can be anything you like that takes the requisite 3 arguments. By convention we recommend organizing your resolvers under `web/resolver/foo.ex`
+Queries are defined as fields inside the GraphQL object returned by
+our `query` function. We created a posts query that has a type
+`list_of(:post)` and is resolved by our `Blog.Resolver.Post.all/2`
+function. Later we'll get into what the arguments to resolver
+functions are; don't worry about it for now. The resolver function can
+be anything you like that takes the requisite 2 arguments.
 
-By default, the atom name of the type (in this case `:post`) is determined by the name of the function which defines it. For more information on type definitions see [Absinthe.Type.Definitions](http://hexdocs.pm/absinthe/Absinthe.Type.Definitions.html).
+For more information on the macros
+available to build a schema, see
+definitions see [Absinthe.Schema](http://hexdocs.pm/absinthe/Absinthe.Schema.html)
+and [Absinthe.Schema.Notation](http://hexdocs.pm/absinthe/Absinthe.Schema.Notation.html).
 
-The last thing we need to do is configure our phoenix router to use our newly created schema.
+The last thing we need to do is configure our Phoenix router to use our newly
+created schema.
 
 ```elixir
 defmodule Blog.Web.Router do
@@ -91,4 +97,7 @@ end
 
 That's it! We're running GraphQL.
 
-Using Absinthe.Plug in your router ensures that your schema is type checked at compile time. This means that if you misspell a type and do `list_of(:pots)` you'll be notified that the type you reference in your schema doesn't exist.
+Using Absinthe.Plug in your router ensures that your schema is type
+checked at compile time. This means that if you misspell a type and do
+`list_of(:pots)` you'll be notified that the type you reference in
+your schema doesn't exist.

@@ -14,35 +14,31 @@ mutation CreatePost {
 }
 ```
 
-Fortunately for us we don't need to make any changes to our types
-file. We do however need a new function in our schema and resolver
+Now we just need to define a `mutation` portion of our schema and
+a `:post` field:
 
 ```elixir
 # in web/schema.ex
-def mutation do
-  %Type.Object{
-    fields: fields(
-      post: [
-        type: :post,
-        args: args(
-          title: [type: non_null(:string)],
-          body: [type: non_null(:string)],
-          posted_at: [type: non_null(:string)],
-        ),
-        resolve: &Resolver.Post.create/3,
-      ]
-    )
-  }
+mutation do
+  field :post, type: :post do
+    arg :title, non_null(:string)
+    arg :body, non_null(:string)
+    arg :posted_at, non_null(:string)
+    resolve &Resolver.Post.create/2
+  end
 end
 ```
 
+The resolver in this case is responsible for making any changes and returning
+an `{:ok, post}` tuple matching the `:post` type we defined earlier:
+
 ```elixir
 # in web/resolver/post.ex
-def create(_obj, args, _exe) do
+def create(args, _info) do
   %Post{}
   |> Post.changeset(args)
   |> Blog.Repo.insert
 end
 ```
 
-Simple enough!
+With this in place, we can accept posts!
