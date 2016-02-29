@@ -32,7 +32,7 @@ $glow                           : hsla(100,100%,100%,0.75) !default;
 /* Based on http://www.colourlovers.com/palette/3404745/berry_vines */
 $green-light: #BEDB89;
 $green: #8EB38A;
-$green-dark: #347F66;
+$green-dark: color($green l(-20%));
 $purple: #7E4463;
 $purple-light: #B06E85;
 

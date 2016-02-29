@@ -26,15 +26,7 @@
     width: 100%;
 
     &:hover {
-      background-color: $link-color;
-      color: $white;
-      text-decoration: none;
-    }
-
-    &.active {
-      background-color: $link-color-active;
-      border-color: $link-color-active;
-      color: $white;
+      color: $link-color-hover;
       text-decoration: none;
     }
 

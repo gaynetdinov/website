@@ -3,14 +3,20 @@
 
   <%= partial 'head' %>
 
-<body class="preload">
+<body class="preload markdown-body">
 
   <%= partial 'page-header' %>
 
   <main id="main">
     <%= partial 'page-navigation' %>
-    <h1>Collection</h1>
-    <%= yield %>
+
+    <article>
+      <header>
+        <h1>Collection</h1>
+      </header>
+      <%= yield %>
+    </article>
+
   </main>
 
   <%= partial 'page-footer' %>
