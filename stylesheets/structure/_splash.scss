@@ -8,7 +8,12 @@ body.splash {
   #main-navigation {
     clear: both;
     margin-top: 20px;
-  }
+
+    li {
+      width: 19%
+    }
+
+  } /* #main-navigation */
 
   #main {
     @extend %nested-margin;
