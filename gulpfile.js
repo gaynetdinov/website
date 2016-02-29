@@ -33,6 +33,12 @@ gulp.task("styles", function () {
     .pipe(browserSync.reload({stream: true}));
 });
 
+gulp.task("images", function () {
+  return gulp.src("images/**/*")
+    .pipe(gulp.dest("output/img"))
+    .pipe(browserSync.reload({stream: true}));
+});
+
 gulp.task("scripts", function () {
   return browserify({entries: './scripts/main.js', debug: true})
     .transform(babelify, {"presets": ["es2015"]})
@@ -47,7 +53,8 @@ gulp.task("server", function() {
     port: 4000,
     server: {
       baseDir: "output"
-    }
+    },
+    browser: "google chrome"
   });
 });
 
@@ -62,6 +69,12 @@ gulp.task("watch:html", ['html'], function() {
   ], ["html"]);
 });
 
+gulp.task("watch:images", function() {
+  gulp.watch([
+    "images/**/*"
+  ], ["images"]);
+});
+
 gulp.task("watch:styles", ['styles'], function() {
   gulp.watch([
     "stylesheets/**/*"
@@ -74,8 +87,7 @@ gulp.task("watch:scripts", ['scripts'], function() {
   ], ["scripts"]);
 });
 
-
-gulp.task("watch", ["watch:html", "watch:styles", "watch:scripts"]);
+gulp.task("watch", ["watch:html", "watch:styles", "watch:scripts", "watch:images"]);
 
 gulp.task('html', function(cb) {
   exec("bundle exec nanoc compile", {maxBuffer: 1024 * 1000}, function (err, stdout, stderr) {
@@ -90,9 +102,9 @@ gulp.task("serve", ["server", "watch"], function() {
   $.util.log($.util.colors.green('*** When you want to stop the server, type `control - c` ***'));
 });
 
-gulp.task('build', ['html', 'styles', 'scripts']);
+gulp.task('build', ['html', 'styles', 'scripts', 'images']);
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['build', 'serve']);
 
 // Handle the error
 function errorHandler (error) {

@@ -1,0 +1,38 @@
+/*  ------------------------------------------------------------------
+  Structure > Splash
+-------------------------------------------------------------------  */
+
+body.splash {
+  background-color: $app-color-primary;
+
+  #main-navigation {
+    clear: both;
+    margin-top: 20px;
+  }
+
+  #main {
+    @extend %nested-margin;
+    background-color: $app-color-primary;
+    height: 100%;
+    min-height: 600px;
+    padding: 0;
+    position: relative;
+    text-align: center;
+  }
+
+  h1 {
+    @extend %image-replacement;
+    background-image: url("/img/absinthe.svg");
+    color: transparent;
+    display: block;
+    height: 425px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+      top: 50%;
+      left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+  }
+
+} /* body.splash */
