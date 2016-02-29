@@ -12,9 +12,11 @@
 @import "../node_modules/primer-markdown/dist/user-content.css";
 
 @import "dependencies/variables/_colors.scss";
+@import "dependencies/variables/_sizes.scss";
 @import "dependencies/variables/_typography.scss";
 
 @import "dependencies/extends/_list-in-disguise.scss";
+@import "dependencies/extends/_nests.scss";
 
 /* Base
 ------------------------------------------------------------------  */

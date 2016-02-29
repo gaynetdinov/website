@@ -8,6 +8,7 @@ end
 compile '/index.md' do
   filter :fenced_code_block
   filter :kramdown
+  filter :colorize_syntax, default_colorizer: :rouge
   layout '/splash.*'
 end
 
@@ -15,6 +16,7 @@ end
 compile '/*.md' do
   filter :fenced_code_block
   filter :kramdown
+  filter :colorize_syntax, default_colorizer: :rouge
   layout '/default.*'
 end
 
@@ -22,6 +24,7 @@ end
 compile '/tutorial/**/*.md' do
   filter :fenced_code_block
   filter :kramdown
+  filter :colorize_syntax, default_colorizer: :rouge
   layout '/collection.*'
 end
 
@@ -29,6 +32,7 @@ end
 compile '/guides/**/*.md' do
   filter :fenced_code_block
   filter :kramdown
+  filter :colorize_syntax, default_colorizer: :rouge
   layout '/collection.*'
 end
 

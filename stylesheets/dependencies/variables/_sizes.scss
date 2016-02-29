@@ -1,12 +1,6 @@
 /*  ------------------------------------------------------------------
-  Structure > Splash
+  Dependencies > Variables > Sizes
 -------------------------------------------------------------------  */
 
-body.splash {
-  background-color: $app-color-primary;
-
-  #main {
-    @extend %nested-margin;
-  }
-
-} /* body.splash */
+$nested-width: 980px;
+$nested-margin: $nested-width / 2;

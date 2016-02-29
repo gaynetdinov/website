@@ -11,9 +11,12 @@ var cssnext = require("postcss-cssnext");
 var precss = require("precss");
 var each = require("postcss-each");
 
+var browserify = require('browserify');
+var babelify = require('babelify');
+var source = require('vinyl-source-stream');
+
 // Compiles the SASS files and moves them into the "assets/stylesheets" directory
 gulp.task("styles", function () {
-  // Looks at the style.scss file for what to include and creates a style.css file
 
   var processors = [
     autoprefixer({browsers: ["last 1 version"]}),
@@ -25,12 +28,17 @@ gulp.task("styles", function () {
   return gulp.src("stylesheets/main.scss")
     .pipe(postcss(processors)).on("error", errorHandler)
     .pipe($.concat('main.css'))
-    // AutoPrefix your CSS so it works between browsers
     .pipe(gulp.dest("output/css"))
-    // Outputs the size of the CSS file
     .pipe($.size({title: "styles"}))
-    // Injects the CSS changes to your browser since Jekyll doesn"t rebuild the CSS
     .pipe(browserSync.reload({stream: true}));
+});
+
+gulp.task("scripts", function () {
+  return browserify({entries: './scripts/main.js', debug: true})
+    .transform(babelify, {"presets": ["es2015"]})
+    .bundle()
+    .pipe(source('main.js'))
+    .pipe(gulp.dest('output/js'));
 });
 
 gulp.task("server", function() {
@@ -44,7 +52,7 @@ gulp.task("server", function() {
   });
 });
 
-gulp.task("watch:html", ['html'], function() {
+gulp.task("watch:html", function() {
   gulp.watch([
     "nanoc.yaml",
     "Rules",
@@ -55,13 +63,20 @@ gulp.task("watch:html", ['html'], function() {
   ], ["html", "styles"]);
 });
 
-gulp.task("watch:styles", ['styles'], function() {
+gulp.task("watch:styles", function() {
   gulp.watch([
     "stylesheets/**/*"
   ], ["styles"]);
 });
 
-gulp.task("watch", ["watch:html", "watch:styles"]);
+gulp.task("watch:scripts", function() {
+  gulp.watch([
+    "scripts/**/*"
+  ], ["scripts"]);
+});
+
+
+gulp.task("watch", ["watch:html", "watch:styles", "watch:scripts"]);
 
 gulp.task('html', function(cb) {
   exec("bundle exec nanoc compile", {maxBuffer: 1024 * 1000}, function (err, stdout, stderr) {
@@ -76,7 +91,7 @@ gulp.task("serve", ["server", "watch"], function() {
   $.util.log($.util.colors.green('*** When you want to stop the server, type `control - c` ***'));
 });
 
-gulp.task('build', ['html', 'styles']);
+gulp.task('build', ['html', 'styles', 'scripts']);
 
 gulp.task('default', ['build', 'serve']);
 

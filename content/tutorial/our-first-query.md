@@ -7,7 +7,7 @@ The first thing our viewers want is a list of our blog posts, so
 that's what we're going to give them. Here's the query we want to
 support:
 
-```
+```graphql
 {
   posts {
     title

@@ -3,13 +3,17 @@ require "CGI"
 class FencedCodeBlock < Nanoc::Filter
   identifier :fenced_code_block
 
+  CONVERSIONS = {
+    "graphql" => "text"
+  }
+
   def run(content, params = {})
-    content.gsub(/(^\`{3}\s*(\S+)\s*$([^`]*)^`{3}\s*$)+?/m) do |match|
-      lang_spec  = $2
+    content.gsub(/(^\`{3}(\S+)?\s*$([^`]*)^`{3}\s*$)+?/m) do |match|
+      lang_spec  = $2 || 'text'
       code_block = $3
 
-      if lang_spec == "groovy"
-        lang_spec = "java"
+      if CONVERSIONS[lang_spec]
+        lang_spec = CONVERSIONS[lang_spec]
       end
 
       rest = '">'
