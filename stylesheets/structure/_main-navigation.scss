@@ -16,24 +16,30 @@
 
   a {
     display: block;
-    color: $green-dark;
-    border: 1px solid $green-dark;;
-    border-radius: 3px;
+    color: $white;
     line-height: 30px;
-    margin: 0 10%;
-    width: 80%;
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 5%;
+    opacity: 0.9;
 
     &:hover {
-      background-color: $green-dark;
-      color: $white;
+      background-color: $white;
+      border-radius: 3px;
       text-decoration: none;
+      color: $green-dark;
     }
 
     &.active {
-      background-color: $green-dark;
-      border-color: $green-dark;
+      border: 1px $white solid;
+      border-radius: 3px;
       color: $white;
+      opacity: 0.8;
       text-decoration: none;
+      &:hover {
+        color: $black;
+      }
     }
 
   } /* a */

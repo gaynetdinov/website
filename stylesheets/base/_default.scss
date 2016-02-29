@@ -22,7 +22,8 @@ body {
 }
 
 body {
-  background-color: $site-background-color;
+  background: url(/img/bg.jpg) no-repeat center center fixed; 
+  background-size: cover;
   color: $black-text;
   font-family: $base-font-stack;
   font-size: $base-font-size;
@@ -31,6 +32,11 @@ body {
   line-height: $base-line-height;
   margin: 0;
   padding: 0;
+}
+
+span.amp {
+  font-family: Baskerville, Palatino, "Book Antiqua", serif;
+  font-style: italic;
 }
 
 .hidden,

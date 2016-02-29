@@ -3,7 +3,6 @@
 -------------------------------------------------------------------  */
 
 body.splash {
-  background-color: $app-color-primary;
 
   #main-navigation {
     clear: both;
@@ -17,17 +16,18 @@ body.splash {
 
   #main {
     @extend %nested-margin;
-    background-color: $app-color-primary;
     height: 100%;
     min-height: 600px;
     padding: 0;
     position: relative;
     text-align: center;
+    background-color: none;
   }
 
   h1 {
     @extend %image-replacement;
     background-image: url("/img/absinthe.svg");
+    opacity: 0.8;
     color: transparent;
     display: block;
     height: 425px;
@@ -37,11 +37,16 @@ body.splash {
   }
 
   h2 {
-    color: $green-dark;
-    font-size: 40px;
+    opacity: 0.8;
+    color: $white;    
+    font-size: 30px;
     font-weight: 300;
-    margin: 0;
+    margin: 30px 0 0;
     padding: 0;
+    .amp {
+      display: inline-block;
+      padding: 0 6px 0 4px;
+    }
   }
 
   .splash-content {
