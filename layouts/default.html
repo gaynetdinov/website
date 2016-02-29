@@ -1,19 +1,18 @@
 <!DOCTYPE HTML>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>A Brand New Nanoc Site - <%= @item[:title] %></title>
-    <link rel="stylesheet" href="/css/main.css">
+<html class="no-js" lang="en">
 
-    <!-- ok >
+  <%= partial 'head' %>
 
-    <!-- you don't need to keep this, but it's cool for stats! -->
-    <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
-  </head>
-  <body>
-    <div id="main">
-      <%= partial 'main-navigation' %>
-      <%= yield %>
-    </div>
-  </body>
+<body class="preload">
+
+  <%= partial 'page-header' %>
+
+  <main id="main">
+    <%= partial 'main-navigation' %>
+    <%= yield %>
+  </main>
+
+  <%= partial 'page-footer' %>
+
+</body>
 </html>
