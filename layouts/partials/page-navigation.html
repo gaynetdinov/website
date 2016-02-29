@@ -1,10 +1,8 @@
 <nav id="page-navigation">
-  <p class="page-navigation-header">Navigation Header</p>
+  <p class="page-navigation-header"><%= item_collection.name %></p>
   <ol>
-    <li><a href="/">Absinthe</a></li>
-    <li><a href="/tutorial/introduction">Tutorial</a></li>
-    <li><a href="/guides/introduction">Guides</a></li>
-    <li><a href="/learning-graphql">Learning GraphQL</a></li>
-    <li><a href="/projects">Projects</a></li>
+    <% item_collection.each do |i| %>
+      <li><a href="<%= i.path %>"><%= i[:title] %></a></li>
+    <% end %>
   </ol>
 </nav>
