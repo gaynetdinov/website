@@ -9,8 +9,10 @@
 /* Dependencies
 ------------------------------------------------------------------  */
 @import "../node_modules/normalize.css/normalize.css";
-@import "dependencies/variables/colors";
+@import "../node_modules/primer-markdown/dist/user-content.css";
+@import "dependencies/variables/_colors.scss";
+@import "dependencies/variables/_typography.scss";
 
 /* Base
 ------------------------------------------------------------------  */
-@import "base/default";
+@import "base/_default.scss";

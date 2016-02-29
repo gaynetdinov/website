@@ -52,7 +52,7 @@ gulp.task("watch:html", ['html'], function() {
     "content/**/*",
     "layouts/**/*",
     "lib/**/*"
-  ], ["html"]);
+  ], ["html", "styles"]);
 });
 
 gulp.task("watch:styles", ['styles'], function() {
