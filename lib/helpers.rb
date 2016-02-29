@@ -4,3 +4,4 @@ end
 
 include PartialsHelper
 include CollectionHelper
+include NavigationHelper
