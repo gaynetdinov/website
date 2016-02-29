@@ -8,9 +8,13 @@
   <%= partial 'page-header' %>
 
   <main id="main">
+    
     <%= partial 'page-navigation' %>
 
     <article>
+      <header>
+        <h1><%= item[:title] %></h1>
+      </header>
       <%= yield %>
     </article>
 
