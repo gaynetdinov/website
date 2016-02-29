@@ -1,0 +1,21 @@
+/*  ------------------------------------------------------------------
+  Extends > Image Replacement
+-------------------------------------------------------------------  */
+
+%image-replacement {
+  background-color: transparent;
+  color: transparent;
+  border: 0;
+  overflow: hidden;
+  text-indent: 100%;
+  text-shadow: none;
+  white-space: nowrap;
+
+  &:before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 0;
+  }
+
+} /* %image-replacement */

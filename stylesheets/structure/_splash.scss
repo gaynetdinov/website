@@ -8,20 +8,24 @@ body.splash {
   #main {
     @extend %nested-margin;
     height: 100%;
-    min-height: 500px;
+    min-height: 600px;
     position: relative;
     text-align: center;
   }
 
   h1 {
-    color: $white;
-    font-size: 100px;
+    @extend %image-replacement;
+    background-image: url("/img/absinthe.svg");
+    color: transparent;
+    display: block;
+    height: 425px;
     margin: 0;
     padding: 0;
     position: absolute;
       top: 50%;
       left: 50%;
     transform: translate(-50%, -50%);
+    width: 700px;
   }
 
 } /* body.splash */
