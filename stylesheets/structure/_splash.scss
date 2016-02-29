@@ -7,6 +7,21 @@ body.splash {
 
   #main {
     @extend %nested-margin;
+    height: 100%;
+    min-height: 500px;
+    position: relative;
+    text-align: center;
+  }
+
+  h1 {
+    color: $white;
+    font-size: 100px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+      top: 50%;
+      left: 50%;
+    transform: translate(-50%, -50%);
   }
 
 } /* body.splash */
