@@ -31,6 +31,15 @@ Support for Facebook's [Relay](https://facebook.github.io/relay/) framework.
 - Package: (Not yet released.)
 - Documentation: (Not yet released.)
 
+### Absinthe Example
+
+The code used in [the tutorial](/tutorial), a [Phoenix](http://phoenixframework.org) application using [Absinthe.Plug](#absintheplug).
+
+- Code: [https://github.com/absinthe-graphql/absinthe_example](https://github.com/absinthe-graphql/absinthe_example)
+- Issues:
+[https://github.com/absinthe-graphql/absinthe_example/issues](https://github.com/absinthe-graphql/absinthe_example/issues)
+
+
 ### Absinthe Website
 
 You're looking at it!
