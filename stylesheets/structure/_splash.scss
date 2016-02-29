@@ -7,8 +7,10 @@ body.splash {
 
   #main {
     @extend %nested-margin;
+    background-color: $app-color-primary;
     height: 100%;
     min-height: 600px;
+    padding: 0;
     position: relative;
     text-align: center;
   }

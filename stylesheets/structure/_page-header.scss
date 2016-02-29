@@ -3,6 +3,23 @@
 -------------------------------------------------------------------  */
 
 #page-header {
+  @extend %clearfix;
+  padding: 20px;
 
+    h1 {
+      @extend %image-replacement;
+      background-image: url("/img/absinthe.svg");
+      color: transparent;
+      display: block;
+      float: left;
+      height: 75px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      float: right;
+      width: 1000px;
+    }
 
 } /* #page-header */
