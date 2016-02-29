@@ -8,8 +8,16 @@
   <%= partial 'page-header' %>
 
   <main id="main">
-    <header><h1><%= item[:title] %></h1></header>
-    <%= yield %>
+    
+    <%= partial 'page-navigation' %>
+
+    <article>
+      <header>
+        <h1><%= item[:title] %></h1>
+      </header>
+      <%= yield %>
+    </article>
+
   </main>
 
   <%= partial 'page-footer' %>

@@ -12,26 +12,26 @@
   li {
     display: inline-block;
     text-align: center;
-    width: 19%;
   }
 
   a {
     display: block;
-    border: 1px solid $link-color;
+    color: $green-dark;
+    border: 1px solid $green-dark;;
     border-radius: 3px;
     line-height: 30px;
     margin: 0 10%;
     width: 80%;
 
     &:hover {
-      background-color: $link-color;
+      background-color: $green-dark;
       color: $white;
       text-decoration: none;
     }
 
     &.active {
-      background-color: $link-color-active;
-      border-color: $link-color-active;
+      background-color: $green-dark;
+      border-color: $green-dark;
       color: $white;
       text-decoration: none;
     }

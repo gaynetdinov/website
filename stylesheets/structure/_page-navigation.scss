@@ -1,0 +1,35 @@
+/*  ------------------------------------------------------------------
+  Structure > Page Navigation
+-------------------------------------------------------------------  */
+
+#page-navigation {
+  float: left;
+
+  .page-navigation-header {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  ol {
+    @extend %list-in-disguise;
+    margin: 0 50px 50px 0;
+  }
+
+  li {
+    border-bottom: 1px solid color($purple l(90%));
+  }
+
+  a {
+    display: block;
+    margin: 15px 15px 15px 0;
+    width: 100%;
+
+    &:hover {
+      color: $link-color-hover;
+      text-decoration: none;
+    }
+
+  } /* a */
+
+} /* #main-navigation */

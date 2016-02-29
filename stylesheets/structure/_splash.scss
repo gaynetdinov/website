@@ -8,7 +8,12 @@ body.splash {
   #main-navigation {
     clear: both;
     margin-top: 20px;
-  }
+
+    li {
+      width: 19%
+    }
+
+  } /* #main-navigation */
 
   #main {
     @extend %nested-margin;
@@ -28,11 +33,22 @@ body.splash {
     height: 425px;
     margin: 0;
     padding: 0;
+    width: 700px;
+  }
+
+  h2 {
+    color: $green-dark;
+    font-size: 40px;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+  }
+
+  .splash-content {
     position: absolute;
       top: 50%;
       left: 50%;
     transform: translate(-50%, -50%);
-    width: 700px;
   }
 
 } /* body.splash */
