@@ -8,7 +8,12 @@
   <%= partial 'page-header' %>
 
   <main id="main">
-    <%= yield %>
+    <%= partial 'page-navigation' %>
+
+    <article>
+      <%= yield %>
+    </article>
+
   </main>
 
   <%= partial 'page-footer' %>
