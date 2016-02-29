@@ -51,7 +51,7 @@ $text-color-light               : $gray-light !default;
 $placeholder-text-color         : $gray-light !default;
 
 /* Links */
-$link-color                     : $purple !default;
+$link-color                     : $purple-light !default;
 $link-color-hover               : color($link-color l(40%)) !default;
 $link-color-active              : color($link-color l(60%)) !default;
 $link-color-visited             : color($link-color l(80%)) !default;

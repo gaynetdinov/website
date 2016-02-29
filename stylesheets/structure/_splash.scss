@@ -5,6 +5,11 @@
 body.splash {
   background-color: $app-color-primary;
 
+  #main-navigation {
+    clear: both;
+    margin-top: 20px;
+  }
+
   #main {
     @extend %nested-margin;
     background-color: $app-color-primary;
