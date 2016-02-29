@@ -1,12 +1,66 @@
 /*  ------------------------------------------------------------------
-  Structure > Base
+  Base > Default
 -------------------------------------------------------------------  */
 
-
 * {
-  box-sizing: border-box;
+  background-repeat: no-repeat;
+
+  &,
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+
+} /* * */
+
+html,
+body {
+  height: 100%;
+  z-index: 1;
 }
 
 body {
   background-color: $site-background-color;
+  color: $black-text;
+  font-family: $base-font-stack;
+  font-size: $base-font-size;
+  font-style: normal;
+  font-variant: normal;
+  line-height: $base-line-height;
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+  z-index: 2;
 }
+
+.hidden,
+.is-hidden {
+  display: none !important;
+}
+
+.is-visible {
+  display: inline-block !important;
+}
+
+.invisible,
+.is-invisible {
+  height: 0 !important;
+  margin: 0 !important;
+  min-height: 0 !important;
+  min-width: 0 !important;
+  opacity: 0 !important;
+  padding: 0 !important;
+  z-index: $z-index-base - 100 !important;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:active,
+  &:hover {
+    outline: 0;
+    text-decoration: underline;
+  }
+
+} /* a */

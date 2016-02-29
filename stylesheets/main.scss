@@ -10,9 +10,18 @@
 ------------------------------------------------------------------  */
 @import "../node_modules/normalize.css/normalize.css";
 @import "../node_modules/primer-markdown/dist/user-content.css";
+
 @import "dependencies/variables/_colors.scss";
 @import "dependencies/variables/_typography.scss";
+
+@import "dependencies/extends/_list-in-disguise.scss";
 
 /* Base
 ------------------------------------------------------------------  */
 @import "base/_default.scss";
+
+/* Structure
+------------------------------------------------------------------  */
+@import "structure/_main-navigation.scss";
+@import "structure/_page-header.scss";
+@import "structure/_splash.scss";
