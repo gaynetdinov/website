@@ -3,6 +3,7 @@
 -------------------------------------------------------------------  */
 
 #main {
+  @extend %clearfix;
   @extend %nested-margin;
   background-color: $white;
   border-radius: 3px;

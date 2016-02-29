@@ -39,9 +39,10 @@ $purple-light: #B06E85;
 /* Colors2Things
 ------------------------------------------------------------------  */
 
-$app-color-primary              : $green-light !default; /* The main highlight color of the app */
+$app-color-primary              : $green !default; /* The main highlight color of the app */
 $app-color-secondary            : $purple !default; /* Secondary color used */
-$site-background-color          : $green-light !default;
+$site-background-color          : $white !default;
+$site-header-color              : $green !default;
 
 /* Text Color */
 $text-color                     : $black-text !default;

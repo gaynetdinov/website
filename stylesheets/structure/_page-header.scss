@@ -4,6 +4,7 @@
 
 #page-header {
   @extend %clearfix;
+  background-color: $site-header-color;
   padding: 20px;
 
   h1 {
