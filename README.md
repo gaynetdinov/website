@@ -1,7 +1,7 @@
 ## Install
 
 ```
-bundle instal
+bundle install
 npm install
 ```
 
