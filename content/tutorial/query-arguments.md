@@ -7,7 +7,7 @@ Our blog needs users, and the ability to look up users by id. Here's
 the query we want to support:
 
 ```graphql
-# description: Get the name and email address of a user
+# description: Get the name and email address of a user.
 {
   user(id: "1") {
     name

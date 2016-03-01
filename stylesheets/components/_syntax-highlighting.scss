@@ -1,13 +1,38 @@
 /*  ------------------------------------------------------------------
   Components > Syntax Highlighting
 -------------------------------------------------------------------  */
+.markdown-body {
+  
+  figure {
+    
+    padding: 0;
+    margin: 0 0 16px 0;
 
-.filename {
-  background-color: color($green-light l(80%));
-  display: inline-block;
-  font-size: 11px;
-  padding: 2px 10px;
-}
+    .filename {
+      background-color: color($green-light l(80%));
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 10px;
+    }
+    
+    .description {
+      border: 1px color($gray-light l(95%)) solid;
+      border-top: 0;
+      font-size: 11px;
+      padding: 4px 10px;
+      color: color($gray-light l(50%));
+      text-align: right;
+    }
+    
+    pre {
+      border: 0;
+      margin-bottom: 0;
+    }
+      
+  } /* figure */
+    
+} /* .markdown-body */
+
 
 .highlight  {
   background-color: $base16-01;
