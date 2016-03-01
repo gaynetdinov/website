@@ -13,7 +13,7 @@
   li {
     display: inline-block;
     text-align: center;
-    width: 24%;
+    width: 19%;
   }
 
   a {
@@ -21,27 +21,42 @@
     display: block;
     font-weight: 200;
     letter-spacing: 2px;
-    line-height: 30px;
     margin: 0 5%;
     opacity: 0.9;
     text-transform: uppercase;
     width: 90%;
 
-    &:hover {
-      background-color: $white;
-      border-radius: 3px;
-      text-decoration: none;
-      color: $green-dark;
+    &:not(.icon-link) {
+      line-height: 32px;
+
+      &:hover {
+        background-color: $white;
+        border-radius: 3px;
+        text-decoration: none;
+        color: $green-dark;
+      }
+
+      &.active {
+        border: 1px $white solid;
+        border-radius: 3px;
+        opacity: 0.8;
+        text-decoration: none;
+
+        &:hover {
+          color: $black;
+        }
+
+      } /* .active */
+
+    } /* &:not(.icon-link) */
+
+    svg {
+      fill: $white;
+      margin-bottom: -7px;
     }
 
-    &.active {
-      border: 1px $white solid;
-      border-radius: 3px;
-      opacity: 0.8;
-      text-decoration: none;
-      &:hover {
-        color: $black;
-      }
+    &:hover svg {
+      fill: $green-light;
     }
 
   } /* a */
