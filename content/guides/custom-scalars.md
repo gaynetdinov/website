@@ -1,6 +1,6 @@
 ---
 title: Custom Scalars
-order: 4
+order: 5
 ---
 
 One of the strengths of GraphQL is its extensibility -- which doesn't end with

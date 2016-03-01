@@ -1,6 +1,6 @@
 ---
 title: Context
-order: 3
+order: 4
 ---
 
 Absinthe context exists to provide shared values to a given document execution.

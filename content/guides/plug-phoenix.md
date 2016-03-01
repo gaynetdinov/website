@@ -1,6 +1,6 @@
 ---
 title: Plug and Phoenix
-order: 2
+order: 3
 ---
 
 First, install Absinthe.Plug and a JSON codec of your choice,
