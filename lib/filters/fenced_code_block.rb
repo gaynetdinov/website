@@ -4,7 +4,7 @@ class FencedCodeBlock < Nanoc::Filter
   identifier :fenced_code_block
 
   CONVERSIONS = {
-    "graphql" => "text"
+
   }
 
   def run(content, params = {})
