@@ -4,10 +4,13 @@ order: 2
 ---
 ## Getting Started
 
-Using Absinthe with Plug and Phoenix is very easy. First install Absinthe.Plug,
-and a JSON codec of your choice. Absinthe.Plug defaults to Poison.
+Using Absinthe with Plug and Phoenix is straighforward.
+
+First, install Absinthe.Plug and a JSON codec of your choice,
+eg, [Poison](https://hex.pm/packages/poison):
 
 ```elixir
+# filename: mix.exs
 def deps do
   [
     {:absinthe_plug, "~> 1.0.0"},
@@ -38,16 +41,15 @@ plug Absinthe.Plug,
   schema: MyApp.Schema
 ```
 
-For more information on how the content types work, see General Usage
+For more information on how the content types work, see [General Usage](#general-usage).
 
 ## Phoenix
 
 If your entire API is going to be based on GraphQL, we recommend simply plugging
 Absinthe.Plug in at the bottom of your endpoint, and removing your router altogether.
 
-Here's a sample Endpoint configured in this way:
-
 ```elixir
+# description: Sample Endpoint
 defmodule MyApp.Endpoint do
   use Phoenix.Endpoint, otp_app: :my_app
 
@@ -65,16 +67,17 @@ end
 ```
 
 If you want only Absinthe.Plug to serve a particular route, configure your router
-in a fashion similar to:
+like:
 
 ```elixir
+# filename: web/router.ex
 defmodule MyApp.Web.Router do
   use Phoenix.Router
 
   resource "/pages", MyApp.PagesController
 
   forward "/api", Absinthe.Plug,
-    schema: Fractalsense.Web.Schema
+    schema: MyApp.Web.Schema
 end
 ```
 
@@ -84,9 +87,10 @@ Now Absinthe.Plug will only serve GraphQL from the `/api` url.
 
 Absinthe.Plug will pass any values found inside `conn.private[:absinthe][:context]`
 on to `Absinthe.run` as the context. This is how you should handle logic that
-uses headers and so on. For more information, see the Context guide.
+uses headers and so on. For more information, see the [Context guide](context/).
 
 ## General Usage
+
 This plug supports requests in a number of ways:
 
 ### Via a GET
@@ -183,22 +187,19 @@ As a plug, `Absinthe.Plug` requires very little configuration. If you want to su
 `application/x-www-form-urlencoded` or `application/json` you'll need to plug
 `Plug.Parsers` first.
 
-Here is an example plug module.
 
 ```elixir
+# description: Example plug module
 plug Plug.Parsers,
   parsers: [:urlencoded, :multipart, :json],
   pass: ["*/*"],
   json_decoder: Poison
 
 plug Absinthe.Plug,
-  schema: MyApp.Linen.Schema,
-  adapter: Absinthe.Adapter.LanguageConventions
+  schema: MyApp.Linen.Schema
 ```
 
-`Absinthe.Plug` requires a `schema:` config. The `LanguageConventions` adapter
-allows you to use `snake_case_names` in your schema while still accepting and
-returning `camelCaseNames`.
+`Absinthe.Plug` requires a `schema:` config.
 
 It also takes several options. See [the documentation](https://hexdocs.pm/absinthe_plug/Absinthe.Plug.html#init/1)
 for the full listing.
