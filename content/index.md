@@ -5,4 +5,4 @@ layout: splash
 
 # Absinthe
 
-## GraphQL for Elixir
+<h2>GraphQL <span class="amp">&amp;</span> Elixir</h2>

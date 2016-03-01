@@ -4,8 +4,13 @@
 
 #page-header {
   @extend %clearfix;
-  background-color: $site-header-color;
-  height: 105px;
+  background-attachment: fixed;
+  background-color: $site-background-color;
+  background-image: url('/img/bg.jpg');
+  background-position:  top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 103px;
 
   h1 {
     @extend %image-replacement;
@@ -19,25 +24,6 @@
     margin: 0;
     padding: 0;
     width: 300px;
-  }
-
-  #main-navigation {
-    margin: 35px 25px 0 0;
-    float: right;
-
-    li a {
-      margin: 0 30px 0 0;
-      width: 150px;
-    }
-
-    li:first-child a {
-      margin-left: 0;
-    }
-
-    li:last-child a {
-      margin-right: 0;
-    }
-
   }
 
 } /* #page-header */
