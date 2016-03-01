@@ -9,16 +9,18 @@ body.splash {
   background-position:  center center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+  min-height: 660px;
 
   #main-navigation {
     clear: both;
     margin-top: 32px;
-  } /* #main-navigation */
+  }
 
   #main {
     @extend %nested-margin;
     height: 100%;
-    min-height: 600px;
+    min-height: 660px;
     padding: 0;
     position: relative;
     text-align: center;
@@ -44,11 +46,13 @@ body.splash {
     font-weight: 300;
     margin: 30px 0 0;
     padding: 0;
+
     .amp {
       display: inline-block;
       padding: 0 6px 0 4px;
     }
-  }
+
+  } /* h2 */
 
   .splash-content {
     position: absolute;
@@ -56,5 +60,17 @@ body.splash {
       left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  #page-footer {
+    color: $white;
+    position: absolute;
+      bottom: 10px;
+    width: 100%;
+
+    a {
+      color: $green-light;
+    }
+
+  } /* $page-footer */
 
 } /* body.splash */

@@ -1,0 +1,14 @@
+/*  ------------------------------------------------------------------
+  Structure > Page Footer
+-------------------------------------------------------------------  */
+
+#page-footer {
+  @extend %clearfix;
+  @extend %nested;
+  text-align: center;
+
+  p {
+    font-size: 12px;
+  }
+
+} /* #page-footer */
