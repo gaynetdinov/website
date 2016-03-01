@@ -4,25 +4,25 @@
 
 %callout-template {
   background-color: $gray;
+  border-left: 5px solid $black;
   display: block;
-  margin-left: 3px solid $black;
   padding: 15px;
 }
 
 .notice {
   @extend %callout-template;
-  background-color: $base16-0D;
-  border-color: color($base16-0D l(-20));
+  background-color: color($base16-0D l(90%));
+  border-color: $base16-0D;
 }
 
 .warning {
   @extend %callout-template;
-  background-color: $base16-0A;
-  border-color: color($base16-0A l(-20));
+  background-color: color($base16-0A l(90%));
+  border-color: $base16-0A;
 }
 
 .alert {
   @extend %callout-template;
-  background-color: $base16-08;
-  border-color: color($base16-08 l(-20));
+  background-color: color($base16-08 l(90%));
+  border-color: $base16-08;
 }
