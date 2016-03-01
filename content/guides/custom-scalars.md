@@ -27,7 +27,7 @@ This creates a new scalar type, `:time` that converts between external string
 times in ISOz format and internal [Timex](https://github.com/bitwalker/timex)
 structs.
 
-<p class="note">
+<p class="notice">
  By default, types defined in Absinthe schemas are automatically given TitleCased
  names for use in GraphQL documents. To give a type a custom name, pass a
  `:name` option. In this example, our scalar type is automatically assigned `Time`).
@@ -58,8 +58,6 @@ serializing it to the same format that `parse` expects as input.
 Descriptions are especially useful for scalars, as users may not be familiar
 with the constraints your `parse` function may place on incoming values.
 
-Be nice and tell them:
-
 ```elixir
 @desc """
 The `Time` scalar type represents time values provided in the ISOz
@@ -71,6 +69,10 @@ scalar :time, description: "ISOz time" do
   serialize &Timex.DateFormat.format!(&1, "{ISOz}")
 end
 ```
+
+<p class="warning">Don't forget to include descriptions for your types
+(and fields and arguments). Introspection is a key benefit of using GraphQL, and
+you'll thank yourself for helpful descriptions later.</p>
 
 ## As query document variables
 
