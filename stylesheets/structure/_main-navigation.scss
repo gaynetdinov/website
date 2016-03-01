@@ -3,26 +3,29 @@
 -------------------------------------------------------------------  */
 
 #main-navigation {
-  margin-top: 15px;
+  margin-top: 32px;
 
   ol {
     @extend %list-in-disguise;
+    margin: 0 50px;
   }
 
   li {
     display: inline-block;
     text-align: center;
+    width: 24%;
   }
 
   a {
-    display: block;
     color: $white;
-    line-height: 30px;
+    display: block;
     font-weight: 200;
-    text-transform: uppercase;
     letter-spacing: 2px;
+    line-height: 30px;
     margin: 0 5%;
     opacity: 0.9;
+    text-transform: uppercase;
+    width: 90%;
 
     &:hover {
       background-color: $white;
@@ -34,7 +37,6 @@
     &.active {
       border: 1px $white solid;
       border-radius: 3px;
-      color: $white;
       opacity: 0.8;
       text-decoration: none;
       &:hover {

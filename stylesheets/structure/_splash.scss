@@ -3,15 +3,16 @@
 -------------------------------------------------------------------  */
 
 body.splash {
+  background-attachment: fixed;
+  background-color: $site-background-color;
+  background-image: url('/img/bg.jpg');
+  background-position:  center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   #main-navigation {
     clear: both;
-    margin-top: 20px;
-
-    li {
-      width: 19%
-    }
-
+    margin-top: 32px;
   } /* #main-navigation */
 
   #main {
@@ -38,7 +39,7 @@ body.splash {
 
   h2 {
     opacity: 0.8;
-    color: $white;    
+    color: $white;
     font-size: 30px;
     font-weight: 300;
     margin: 30px 0 0;
