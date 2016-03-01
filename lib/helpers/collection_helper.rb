@@ -27,11 +27,15 @@ module CollectionHelper
       data.each(&block)
     end
 
+    def next_item
+      return @next_item if defined?(@next_item)
+      @next_item = data[data.index(@item) + 1]
+    end
+
   end
 
   def item_collection
     @item_collection ||= ItemCollection.new(item, items)
   end
-
 
 end

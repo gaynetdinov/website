@@ -12,13 +12,22 @@ compile '/index.md' do
   layout '/splash.*'
 end
 
+# Series pages
+compile '/tutorial{.md,/**/*.md}' do
+  filter :fenced_code_block
+  filter :kramdown
+  filter :colorize_syntax, default_colorizer: :rouge
+  layout '/series.*'
+end
+
 # Collection pages
-compile '/{tutorial,guides}{.md,/**/*.md}' do
+compile '/guides{.md,/**/*.md}' do
   filter :fenced_code_block
   filter :kramdown
   filter :colorize_syntax, default_colorizer: :rouge
   layout '/collection.*'
 end
+
 
 # Other pages
 compile '/**/*.md' do
