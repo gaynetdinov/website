@@ -6,10 +6,13 @@
 ------------------------------------------------------------------  */
 @charset "UTF-8";
 
-/* Dependencies
+/* Vendor
 ------------------------------------------------------------------  */
 @import "../node_modules/normalize.css/normalize.css";
 @import "../node_modules/primer-markdown/dist/user-content.css";
+
+/* Dependencies
+------------------------------------------------------------------  */
 
 @import "dependencies/variables/_colors.scss";
 @import "dependencies/variables/_sizes.scss";
@@ -19,6 +22,10 @@
 @import "dependencies/extends/_image-replacement.scss";
 @import "dependencies/extends/_list-in-disguise.scss";
 @import "dependencies/extends/_nests.scss";
+
+/* Vendor Overrides
+------------------------------------------------------------------  */
+@import "vendor/_primer-markdown.scss";
 
 /* Base
 ------------------------------------------------------------------  */
