@@ -30,6 +30,10 @@
       text-decoration: none;
     }
 
+    &.active {
+      font-weight: 700;
+    }
+
   } /* a */
 
 } /* #main-navigation */
