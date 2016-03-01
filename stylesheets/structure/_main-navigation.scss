@@ -3,17 +3,25 @@
 -------------------------------------------------------------------  */
 
 #main-navigation {
-  margin-top: 32px;
+  float: right;
+  margin: 32px 25px 0 0;
 
   ol {
     @extend %list-in-disguise;
-    margin: 0 50px;
   }
 
   li {
     display: inline-block;
+    min-width: 150px;
     text-align: center;
     width: 19%;
+
+    &:last-child {
+      min-width: 50px;
+      margin: 0 0 0 10px;
+      width: 50px;
+    }
+
   }
 
   a {

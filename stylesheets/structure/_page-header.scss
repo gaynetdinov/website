@@ -4,7 +4,6 @@
 
 #page-header {
   @extend %clearfix;
-  @extend %nested;
   background-attachment: fixed;
   background-color: $site-background-color;
   background-image: url('/img/bg.jpg');

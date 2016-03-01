@@ -1,0 +1,36 @@
+/*  ------------------------------------------------------------------
+  Dependencies > Mixins > Responsive Design
+-------------------------------------------------------------------  */
+
+$page-with-logo: 1400px;
+$page-width: $nested-width;
+$phone-width-min: 320px;
+$phone-width-max: $phone-width-min + 160;
+
+@define-mixin bodhi $breakpoint {
+
+  /* Smallerish Screens */
+  @if $breakpoint == smaller-screens {
+    @media all and (max-width: $page-with-logo)
+      { @mixin-content; }
+  }
+
+  /* Smaller then Avg  Screens */
+  @if $breakpoint == minimum {
+    @media all and (max-width: $page-width)
+      { @mixin-content; }
+  }
+
+  /* Phone */
+  @if $breakpoint == phone {
+    @media only screen and (min-device-width : $phone-width-min) and (max-device-width : $phone-width-max)
+      { @mixin-content; }
+  }
+
+  /* Nest */
+  @if $breakpoint == smaller-then-nest {
+    @media all and (max-width: $nest-width)
+      { @mixin-content; }
+  }
+
+} /* @define-mixin bodhi($breakpoint) */
