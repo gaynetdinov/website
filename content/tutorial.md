@@ -3,9 +3,11 @@ title: Introduction
 order: 1
 ---
 
-Let's build a (basic) GraphQL Blog Server with Absinthe.
+Before you start, it's a good idea to have some background into [GraphQL in general](/learning-graphql).
 
-This tutorial does assume a (super) basic knowledge of what a GraphQL
-query is. It DOES NOT assume any knowledge of Absinthe. For a basic
-sense of how GraphQL works, see:
-http://facebook.github.io/graphql/#sec-Overview
+## The Example
+
+We'll be building a very basic GraphQL API for a blog, written in Elixir using
+Absinthe.
+
+Let's get started!
