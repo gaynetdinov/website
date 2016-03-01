@@ -24,6 +24,7 @@ argument.
 
 ```elixir
 # filename: in web/schema/types
+@desc "A user of the blog"
 object :user do
   field :id, :id
   field :name, :string
@@ -31,6 +32,7 @@ object :user do
   field :posts, list_of(:post)
 end
 
+@desc "A blog post"
 object :post do
   field :title, :string
   field :body, :string
@@ -41,9 +43,12 @@ end
 ```elixir
 # filename: web/schema.ex
 query do
+  @desc "Get all blog posts"
   field :posts, list_of(:post) do
     resolve &Resolver.Post.all/2
   end
+
+  @desc "Get a user of the blog"
   field :user, type: :user do
     arg :id, non_null(:id)
     resolve &Resolver.User.find/2
@@ -67,7 +72,10 @@ defmodule Blog.Resolver.User do
 end
 ```
 
-The second argument to every resolve function contains the GraphQL
+Resolve functions are expected to return either `{:ok, item}` or
+`{:error, reason | [reason, ...]}`.
+
+The first argument to every resolve function contains the GraphQL
 arguments of the query / mutation. Our schema marks the `:id` argument as
 `non_null`, so we can be certain we will receive it and just pattern
 match directly. If `:id` is left out of the query, Absinthe will
