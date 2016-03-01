@@ -2,9 +2,6 @@
 title: Plug and Phoenix
 order: 2
 ---
-## Getting Started
-
-Using Absinthe with Plug and Phoenix is straighforward.
 
 First, install Absinthe.Plug and a JSON codec of your choice,
 eg, [Poison](https://hex.pm/packages/poison):
