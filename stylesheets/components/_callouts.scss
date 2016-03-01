@@ -1,0 +1,28 @@
+/*  ------------------------------------------------------------------
+  Components > Callouts
+-------------------------------------------------------------------  */
+
+%callout-template {
+  background-color: $gray;
+  display: block;
+  margin-left: 3px solid $black;
+  padding: 15px;
+}
+
+.notice {
+  @extend %callout-template;
+  background-color: $base16-0D;
+  border-color: color($base16-0D l(-20));
+}
+
+.warning {
+  @extend %callout-template;
+  background-color: $base16-0A;
+  border-color: color($base16-0A l(-20));
+}
+
+.alert {
+  @extend %callout-template;
+  background-color: $base16-08;
+  border-color: color($base16-08 l(-20));
+}
