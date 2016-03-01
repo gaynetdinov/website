@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="en">
+
+  <%= partial 'head' %>
+
+<body class="preload markdown-body">
+
+  <%= partial 'page-header' %>
+
+  <main id="main">
+    <%= partial 'page-navigation' %>
+
+    <article>
+      <header>
+        <h1><%= item[:title] %></h1>
+      </header>
+      <%= yield %>
+      <% if item_collection.next_item %>
+        <p class="next">
+          Next: Read
+          <a href="<%= item_collection.next_item.path %>">"<%= item_collection.next_item[:title] %>"</a>
+        </p>
+      <% end %>
+    </article>
+
+  </main>
+
+  <%= partial 'page-footer' %>
+
+</body>
+</html>

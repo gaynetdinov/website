@@ -8,7 +8,7 @@ class FencedCodeBlock < Nanoc::Filter
   }
 
   def run(content, params = {})
-    content.gsub(/(^\`{3}(\S+)?\s*$([^`]*)^`{3}\s*$)+?/m) do |match|
+    content.gsub(/(^`{3}(\S+)\s*$(.+?)\s*^`{3})+?/m) do |match|
       lang_spec  = $2 || 'text'
       code_block = $3
 
