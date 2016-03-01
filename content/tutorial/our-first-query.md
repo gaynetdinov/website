@@ -8,6 +8,7 @@ that's what we're going to give them. Here's the query we want to
 support:
 
 ```graphql
+# description: A simple query
 {
   posts {
     title
@@ -23,7 +24,7 @@ types on top of which all of our types will be built. The
 the right one to use when representing a set of key value pairs.
 
 ```elixir
-# web/schema/types.ex
+# filename: web/schema/types.ex
 defmodule Blog.Schema.Types do
   use Absinthe.Schema.Notation
 
@@ -48,7 +49,7 @@ With our type completed we can now write a basic schema that will let us query a
 set of posts.
 
 ```elixir
-# web/schema.ex
+# filename: web/schema.ex
 defmodule Blog.Schema do
   use Absinthe.Schema
   import_types Blog.Schema.Types
@@ -62,8 +63,10 @@ defmodule Blog.Schema do
   end
 
 end
+```
 
-# web/resolver/post.ex
+```elixir
+# filename: web/resolver/post.ex
 defmodule Blog.Resolver.Post do
   def all(_args, _info) do
     {:ok, Blog.Repo.all(Post)}
@@ -87,6 +90,7 @@ The last thing we need to do is configure our Phoenix router to use our newly
 created schema.
 
 ```elixir
+# filename: web/router.ex
 defmodule Blog.Web.Router do
   use Phoenix.Router
 

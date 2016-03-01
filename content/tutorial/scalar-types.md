@@ -8,6 +8,7 @@ be something we could both send as part of our CreatePost mutation,
 and also retrieve in a query.
 
 ```graphql
+# description: Create a post and return the new post ID and creation time.
 mutation CreatePost {
   post(title: "Second", body: "We're off to a great start!", postedAt: "2016-01-19T16:07:37Z") {
     id
@@ -27,7 +28,7 @@ additional
 Let's define our time type:
 
 ```elixir
-# in web/schema/types.ex
+# filename: web/schema/types.ex
 
 scalar :time, description: "ISOz time" do
   parse &Timex.DateFormat.parse(&1, "{ISOz}")
@@ -38,6 +39,7 @@ end
 Our post should now look like:
 
 ```elixir
+# filename: web/schema/types.ex
 object :post do
   field :title, :string
   field :body, :string
@@ -48,6 +50,7 @@ end
 And our mutation in the schema should look like:
 
 ```elixir
+# filename: web/schema.ex
 mutation do
   field :post, type: :post do
     arg :title, non_null(:string)

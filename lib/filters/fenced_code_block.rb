@@ -8,9 +8,11 @@ class FencedCodeBlock < Nanoc::Filter
   }
 
   def run(content, params = {})
-    content.gsub(/(^`{3}(\S+)\s*$(.+?)\s*^`{3})+?/m) do |match|
+    content.gsub(/(^`{3}(\S+)\s*$(?:\s*#\s*(filename|description):\s*(.*?)\s*)?$(.+?)\s*^`{3})+?/m) do |match|
       lang_spec  = $2 || 'text'
-      code_block = $3
+      caption_type = $3
+      caption_content = $4
+      code_block = $5
 
       if CONVERSIONS[lang_spec]
         lang_spec = CONVERSIONS[lang_spec]
@@ -20,7 +22,19 @@ class FencedCodeBlock < Nanoc::Filter
       code_block.gsub!("[:backtick:]", "`")
       rest << CGI::escapeHTML(code_block)
 
-      replacement = "<pre"
+      if caption_type
+        caption = "<figcaption class='#{caption_type}'>#{caption_content}</figcaption>\n"
+      else
+        caption = nil
+      end
+
+      replacement = "<figure class='codeblock'>"
+
+      if caption_type == 'filename'
+        replacement << caption
+      end
+
+      replacement << "<pre"
 
       if lang_spec && lang_spec.length > 0
         if lang_spec == "bash"
@@ -34,6 +48,13 @@ class FencedCodeBlock < Nanoc::Filter
           replacement << "</code></pre>\n"
         end
       end
+
+      if caption_type == 'description'
+        replacement << caption
+      end
+
+      replacement << "</figure>"
+
     end
   end
 end

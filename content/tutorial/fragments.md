@@ -10,10 +10,10 @@ There's a twist here though. In the spirit of fostering quality online
 dialog, we're going to allow comments both directly on the post, as
 well as on other comments. For mutations we'll want to accept both
 post and comment arguments. For querying a comment, we're going to
-need some fancier GraphQL features. Here are the documents we want to
-support:
+need some fancier GraphQL features.
 
 ```graphql
+# description: Operations we want to support
 mutation CreateComment {
   comment(post: {id: "1"})
 }

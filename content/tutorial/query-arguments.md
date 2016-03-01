@@ -7,6 +7,7 @@ Our blog needs users, and the ability to look up users by id. Here's
 the query we want to support:
 
 ```graphql
+# description: Get the name and email address of a user
 {
   user(id: "1") {
     name
@@ -22,8 +23,7 @@ argument.
 
 
 ```elixir
-# in web/schema/types
-
+# filename: in web/schema/types
 object :user do
   field :id, :id
   field :name, :string
@@ -36,8 +36,10 @@ object :post do
   field :body, :string
   field :author, :user
 end
+```
 
-# in web/schema.ex
+```elixir
+# filename: web/schema.ex
 query do
   field :posts, list_of(:post) do
     resolve &Resolver.Post.all/2
@@ -54,7 +56,7 @@ return values. This powers a number of very helpful features. To see
 them at work, let's look at our resolver.
 
 ```elixir
-# web/resolver/user.ex
+# filename: web/resolver/user.ex
 defmodule Blog.Resolver.User do
   def find(%{id: id}, _info) do
     case Blog.Repo.get(User, id) do
