@@ -1,6 +1,6 @@
 ---
 title: Plug and Phoenix
-order: 4
+order: 2
 ---
 ## Getting Started
 
