@@ -6,7 +6,5 @@ order: 1
 To the left you'll find a list of guides that we hope you'll find useful
 in helping you understand and use Absinthe.
 
-- [Writing Schemas](writing-schemas/) - How to write a basic Absinthe schema.
-- [Plug and Phoenix](plug-phoenix/) - How to use Absinthe.Plug to build GraphQL APIs in Phoenix.
-- [Context](context/) - How the execution context can be used during resolution to support authentication and other state-aware concepts.
-- [Custom Scalars](custom-scalars/) - How to define and use your own scalar types.
+Contribution of new guides -- and errata for those existing -- are welcomed
+at the [website repository](https://github.com/absinthe-graphql/website).

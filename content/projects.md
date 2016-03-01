@@ -2,6 +2,8 @@
 title: Projects
 ---
 
+Absinthe projects are built by [core](/team) and [community](/community) contributors.
+
 The roadmap for our projects can be found [here](/roadmap).
 
 ## Absinthe

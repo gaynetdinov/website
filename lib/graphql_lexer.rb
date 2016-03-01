@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*- #
 
 require "rouge"
-require "rouge/regex_lexer"
 
 module Rouge
   module Lexers

@@ -54,8 +54,8 @@ We can do it in the same `MyApp.Schema` module, using the `object` macro defined
 
 ```elixir
 # filename: myapp/schema.ex
+@desc "An item"
 object :item do
-  description "An item"
   field :id, :id
   field :name, :string
 end

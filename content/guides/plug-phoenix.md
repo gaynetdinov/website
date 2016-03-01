@@ -84,7 +84,9 @@ Now Absinthe.Plug will only serve GraphQL from the `/api` url.
 
 Absinthe.Plug will pass any values found inside `conn.private[:absinthe][:context]`
 on to `Absinthe.run` as the context. This is how you should handle logic that
-uses headers and so on. For more information, see the [Context guide](context/).
+uses headers -- most notably, Authentication.
+
+For more information, see the [Context guide](context/).
 
 ## General Usage
 
@@ -105,7 +107,7 @@ we recommend using one of the POST options below instead, putting the `query` in
 
 With a POST body:
 
-```
+```json
 {
   "query": "query GetItem($id: ID!) { item(id: $id) { name } }",
   "variables": {
@@ -125,7 +127,7 @@ With a query string:
 
 And a POST body:
 
-```
+```graphql
 query GetItem($id: ID!) {
   item(id: $id) {
     name

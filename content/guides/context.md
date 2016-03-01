@@ -41,6 +41,7 @@ end
 ```
 
 A query we might want would look like
+
 ```graphql
 {
   profile {
@@ -50,16 +51,23 @@ A query we might want would look like
 ```
 
 If we're signed in as user 1, we should get only user 1's email.
+
 ```json
-{"profile":{"email":"bubba@foo.com"}}
+{
+  "profile": {
+    "email": "bubba@foo.com"
+  }
+}
 ```
 
 In order to set the context, our call to Absinthe.run should look like:
+
 ```elixir
 Absinthe.run(document, MyApp.Schema, context: %{current_user: %{id: "1"}})
 ```
 
 To access this, we need to update our query's resolve function:
+
 ```elixir
 query do
   field :profile, :user do
@@ -142,6 +150,7 @@ plug Absinthe.Plug,
 ```
 
 If you're using a phoenix router, add the context plug to a pipeline.
+
 ```elixir
 defmodule MyApp.Router do
   use Phoenix.Router
