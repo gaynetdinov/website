@@ -33,7 +33,7 @@ end
 ```
 
 <p class="notice">
-  You may want to refer to the <a href="http://hexdocs.pm/absinthe/">Absinthe API
+  You may want to refer to the <a href="https://hexdocs.pm/absinthe/">Absinthe API
   documentation</a> for more detailed information as you look this over..
 </p>
 
@@ -63,7 +63,7 @@ end
 
 Now, you can use Absinthe to execute a query document. Keep in mind that for
 HTTP, you'll probably want to use
-[Absinthe.Plug](/plug-phoenix) instead of executing
+[Absinthe.Plug](/guides/plug-phoenix) instead of executing
 GraphQL query documents yourself. Absinthe doesn't know or care about HTTP,
 but the `absinthe_plug` project does -- and handles the vagaries of interacting
 with HTTP GraphQL clients so you don't have to.
