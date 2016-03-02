@@ -89,5 +89,5 @@ mutation MarkPostAsRead($postID: ID!, $when: Time!) {
 
 ## Further reading
 
-* The `scalar` macro is defined in [Absinthe.Schema.Notation](https://hexdocs.pm/absinthe/Absinthe.Schema.Notation.html).
+* The `scalar` macro is defined in [Absinthe.Schema.Notation](https://hexdocs.pm/absinthe/Absinthe.Schema.Notation.html#scalar/3).
 * The built-in scalars are defined in [Absithe.Type.BuiltIns.Scalars](https://hexdocs.pm/absinthe/Absinthe.Type.BuiltIns.Scalars.html).
