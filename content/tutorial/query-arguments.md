@@ -73,7 +73,7 @@ end
 ```
 
 Resolve functions are expected to return either `{:ok, item}` or
-`{:error, reason | [reason, ...]}`.
+`{:error, binary | [binary, ...]}`.
 
 The first argument to every resolve function contains the GraphQL
 arguments of the query / mutation. Our schema marks the `:id` argument as

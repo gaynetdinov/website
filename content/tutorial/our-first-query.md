@@ -61,7 +61,7 @@ defmodule Blog.Schema do
 
   query do
     field :posts, list_of(:post) do
-      resolve: &Resolver.Post.all/2
+      resolve &Resolver.Post.all/2
     end
   end
 
