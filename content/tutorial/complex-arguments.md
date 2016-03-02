@@ -64,13 +64,16 @@ Finally our schema:
 ```elixir
 # filename: web/schema.ex
 mutation do
+
   #... other mutations
+
   field :user, :user do
-    field :contact, non_null(:contact_input)
-    field :password, :string
+    arg :contact, non_null(:contact_input)
+    arg :password, :string
 
     resolve &Resolver.User.create/2
   end
+
 end
 ```
 
