@@ -36,14 +36,17 @@ defmodule Blog.Schema.Types do
 end
 ```
 
-The canonical GraphQL name of the type is defined automatically for
-us as a TitleCased version of the identifier (in this case `:post` gives us
-`"Post"`). We could change this by passing an explicit value to the `object`
-macro as `:name`.
+<p class="notice">
+The GraphQL specification requires that type names be unique, TitleCased words.
+Absinthe does this automatically for us, extrapolating from our type identifier
+(in this case <code>:post</code> gives us <code>"Post"</code>). If really
+needed, we could provide a custom type name as a <code>:name</code> option to
+the <code>object</code> macro.
+</p>
 
 If you're curious what the type `:id` is used by the `:id` field, see the
-[GraphQL spec](https://facebook.github.io/graphql/#sec-ID).
-In our case it's our regular Ecto id, but always serialized as a string.
+[GraphQL spec](https://facebook.github.io/graphql/#sec-ID). It's an opaque
+value, and in our case is just the regular Ecto id, but serialized as a string.
 
 With our type completed we can now write a basic schema that will let us query a
 set of posts.
@@ -101,7 +104,7 @@ end
 
 That's it! We're running GraphQL.
 
-Using Absinthe.Plug in your router ensures that your schema is type
+Using `Absinthe.Plug` in your router ensures that your schema is type
 checked at compile time. This means that if you misspell a type and do
 `list_of(:pots)` you'll be notified that the type you reference in
 your schema doesn't exist.
