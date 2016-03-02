@@ -27,12 +27,14 @@ You can find [our projects](/projects) in the GitHub
 [absinthe-graphql](https://github.com/absinthe-graphql) organization.
 Contributing is just a pull request away.
 
-## Discussion
+## Chat
 
-Look for [us](/team) on Freenode in `#elixir-lang` (and in `#absinthe-graphql`
-if you'd like to go in-depth on any GraphQL questions). We'd love to hear how
-you're using Absinthe and help you dig deeper into what you can do with GraphQL
-and Elixir.
+We'd love to hear how you're using Absinthe and help you dig deeper into what
+you can do with GraphQL and Elixir.
+
+- IRC - Find [us](/team) on Freenode in `#elixir-lang`
+- Slack - We're in the Elixir `#absinthe-graphql` channel. For an invite to
+  Elixir's Slack team, go [here](https://elixir-slackin.herokuapp.com/).
 
 ## Mailing List
 
