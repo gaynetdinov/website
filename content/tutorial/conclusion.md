@@ -3,7 +3,7 @@ title: Conclusion
 order: 8
 ---
 
-With this we have a basic GraphQL based API for a blog. Head on over to [the github page](http://github.com/absinthe-graphql/absinthe_example) if you want the final code.
+With this we have a basic GraphQL based API for a blog. Head on over to [the github page](https://github.com/absinthe-graphql/absinthe_example) if you want the final code.
 
 We hope to expand this tutorial to include a comment system that will acquaint you
 with Union types and Fragments in the coming days.

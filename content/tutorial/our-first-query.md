@@ -20,7 +20,7 @@ support:
 To do this we're going to need a schema. Let's create some basic types
 for our schema, starting with a Post. GraphQL has several fundamental
 types on top of which all of our types will be built. The
-[Object](http://hexdocs.pm/absinthe/Absinthe.Type.Object.html) type is
+[Object](https://hexdocs.pm/absinthe/Absinthe.Type.Object.html) type is
 the right one to use when representing a set of key value pairs.
 
 ```elixir
@@ -86,8 +86,8 @@ be anything you like that takes the requisite 2 arguments.
 
 For more information on the macros
 available to build a schema, see
-definitions see [Absinthe.Schema](http://hexdocs.pm/absinthe/Absinthe.Schema.html)
-and [Absinthe.Schema.Notation](http://hexdocs.pm/absinthe/Absinthe.Schema.Notation.html).
+definitions see [Absinthe.Schema](https://hexdocs.pm/absinthe/Absinthe.Schema.html)
+and [Absinthe.Schema.Notation](https://hexdocs.pm/absinthe/Absinthe.Schema.Notation.html).
 
 The last thing we need to do is configure our Phoenix router to use our newly
 created schema.

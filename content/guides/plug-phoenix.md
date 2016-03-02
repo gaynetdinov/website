@@ -86,13 +86,13 @@ Absinthe.Plug will pass any values found inside `conn.private[:absinthe][:contex
 on to `Absinthe.run` as the context. This is how you should handle logic that
 uses headers -- most notably, Authentication.
 
-For more information, see the [Context guide](context/).
+For more information, see the [Context guide](/guides/context/).
 
 ## General Usage
 
 This plug supports requests in a number of ways:
 
-### Via a GET
+### <a name="via-a-get">Via a GET</a>
 
 With a query string:
 
@@ -117,7 +117,7 @@ With a POST body:
 ```
 
 (We could also pull either `query` or `variables` out to the query string, just
-as in the [GET example](./README.md#via-a-get).)
+as in the [GET example](#via-a-get).)
 
 ### Via an `application/graphql` POST
 
@@ -141,7 +141,7 @@ How clients interact with the plug over HTTP is designed to closely match that
 of the official
 [express-graphql](https://github.com/graphql/express-graphql) middleware.
 
-In the [example above](./README.md#example), we went over the various ways to
+In the [example above](#example), we went over the various ways to
 make a request, but here are the details:
 
 Once installed at a path, the plug will accept requests with the

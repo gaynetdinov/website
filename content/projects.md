@@ -17,7 +17,7 @@ Core functionality.
 
 ## Absinthe.Plug
 
-[Plug](https://github.com/elixir-lang/plug) integration, primarily used to support [Phoenix](phoenixframework.org) applications.
+[Plug](https://github.com/elixir-lang/plug) integration, primarily used to support [Phoenix](http://www.phoenixframework.org/) applications.
 
 - Code: [https://github.com/absinthe-graphql/absinthe_plug](https://github.com/absinthe-graphql/absinthe_plug)
 - Issues: [https://github.com/absinthe-graphql/absinthe_plug/issues](https://github.com/absinthe-graphql/absinthe/issues)
@@ -35,7 +35,7 @@ Support for Facebook's [Relay](https://facebook.github.io/relay/) framework.
 
 ### Absinthe Example
 
-The code used in [the tutorial](/tutorial), a [Phoenix](http://phoenixframework.org) application using [Absinthe.Plug](#absintheplug).
+The code used in [the tutorial](/tutorial), a [Phoenix](http://www.phoenixframework.org/) application using [Absinthe.Plug](#absintheplug).
 
 - Code: [https://github.com/absinthe-graphql/absinthe_example](https://github.com/absinthe-graphql/absinthe_example)
 - Issues:
