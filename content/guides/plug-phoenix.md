@@ -86,7 +86,7 @@ Absinthe.Plug will pass any values found inside `conn.private[:absinthe][:contex
 on to `Absinthe.run` as the context. This is how you should handle logic that
 uses headers -- most notably, Authentication.
 
-For more information, see the [Context guide](context/).
+For more information, see the [Context guide](/guides/context/).
 
 ## General Usage
 
