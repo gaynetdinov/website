@@ -32,7 +32,7 @@ Contributing is just a pull request away.
 We'd love to hear how you're using Absinthe and help you dig deeper into what
 you can do with GraphQL and Elixir.
 
-- IRC - Find [us](/team) on Freenode in `#elixir-lang`
+- IRC - Find [us](/team) on Freenode in `#elixir-lang`.
 - Slack - We're in the Elixir `#absinthe-graphql` channel. For an invite to
   Elixir's Slack team, go [here](https://elixir-slackin.herokuapp.com/).
 
