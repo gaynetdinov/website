@@ -5,8 +5,8 @@
 #page-header {
   @extend %clearfix;
   background-attachment: fixed;
-  background-color: $site-background-color;
-  background-image: url('/img/bg.jpg');
+  background-color: $green-dark;
+  background-image: url("/img/bg.jpg");
   background-position:  top center;
   background-repeat: no-repeat;
   background-size: cover;
