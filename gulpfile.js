@@ -14,6 +14,7 @@ var each = require("postcss-each");
 var browserify = require('browserify');
 var babelify = require('babelify');
 var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 
 // Compiles the SASS files and moves them into the "assets/stylesheets" directory
 gulp.task("styles", function () {
@@ -50,6 +51,9 @@ gulp.task("scripts", function () {
     .transform(babelify, {"presets": ["es2015"]})
     .bundle()
     .pipe(source('main.js'))
+    .pipe(buffer())
+    .pipe($.uglify())
+    .pipe($.size({title: "scripts"}))
     .pipe(gulp.dest('output/js'));
 });
 
