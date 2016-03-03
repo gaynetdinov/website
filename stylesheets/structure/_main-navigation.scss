@@ -6,6 +6,10 @@
   float: right;
   margin: 32px 25px 0 0;
 
+  @mixin bodhi phone {
+    display: none;
+  }
+
   ol {
     @extend %list-in-disguise;
   }

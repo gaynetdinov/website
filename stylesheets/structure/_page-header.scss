@@ -24,6 +24,14 @@
     margin: 0;
     padding: 0;
     width: 300px;
-  }
+
+    @mixin bodhi phone {
+      background-position: center center;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+    }
+
+  } /* h1 */
 
 } /* #page-header */
