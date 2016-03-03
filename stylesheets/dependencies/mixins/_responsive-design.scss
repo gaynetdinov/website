@@ -5,21 +5,9 @@
 $page-with-logo: 1400px;
 $page-width: $nested-width;
 $phone-width-min: 320px;
-$phone-width-max: 480px;
+$phone-width-max: 700px;
 
 @define-mixin bodhi $breakpoint {
-
-  /* Smallerish Screens */
-  @if $breakpoint == smaller-screens {
-    @media all and (max-width: $page-with-logo)
-      { @mixin-content; }
-  }
-
-  /* Smaller then Avg  Screens */
-  @if $breakpoint == minimum {
-    @media all and (max-width: $page-width)
-      { @mixin-content; }
-  }
 
   /* Phone */
   @if $breakpoint == phone {
@@ -29,7 +17,13 @@ $phone-width-max: 480px;
 
   /* Nest */
   @if $breakpoint == smaller-then-nest {
-    @media all and (max-width: $nest-width)
+    @media all and (max-width: $nested-width)
+      { @mixin-content; }
+  }
+
+  /* Smaller Screens */
+  @if $breakpoint == smaller-screens {
+    @media all and (max-width: $page-with-logo)
       { @mixin-content; }
   }
 

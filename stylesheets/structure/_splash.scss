@@ -14,13 +14,13 @@ body.splash {
 
   #mobile-menu {
 
-    @mixin bodhi phone {
+    @mixin bodhi smaller-then-nest {
       display: none;
     }
 
   } /* #mobile-menu */
 
-  @mixin bodhi phone {
+  @mixin bodhi smaller-then-nest {
     min-height: 750px;
   }
 
@@ -28,7 +28,7 @@ body.splash {
     clear: both;
     width: 100%;
 
-    @mixin bodhi phone {
+    @mixin bodhi smaller-then-nest {
       display: block;
       position: absolute;
         top: 300px;
@@ -48,7 +48,7 @@ body.splash {
     text-align: center;
     background-color: transparent;
 
-    @mixin bodhi phone {
+    @mixin bodhi smaller-then-nest {
       margin-left: 0;
       margin-right: 0;
     }
@@ -66,7 +66,7 @@ body.splash {
     padding: 0;
     width: 700px;
 
-    @mixin bodhi phone {
+    @mixin bodhi smaller-then-nest {
       height: 174px;
       width: 300px;
     }
@@ -95,7 +95,7 @@ body.splash {
     text-align: center;
     transform: translate(-50%, -50%);
 
-    @mixin bodhi phone {
+    @mixin bodhi smaller-then-nest {
       top: 30px;
       transform: translateX(-50%);
     }

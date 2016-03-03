@@ -21,7 +21,7 @@ body {
   width: 100%;
   z-index: 2;
 
-  @mixin bodhi phone {
+  @mixin bodhi smaller-then-nest {
     min-width: 100%;
   }
 

@@ -8,7 +8,7 @@
   border-radius: 3px;
   padding: 70px 15px 15px;
 
-  @mixin bodhi phone {
+  @mixin bodhi smaller-then-nest {
     margin: 0 0 0 0;
     width: 100%;
   }
@@ -21,7 +21,7 @@ body.series {
   article {
     margin-left: 200px;
 
-    @mixin bodhi phone {
+    @mixin bodhi smaller-then-nest {
       margin-left: 0;
     }
 

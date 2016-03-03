@@ -5,7 +5,7 @@
 #page-navigation {
   float: left;
 
-  @mixin bodhi phone {
+  @mixin bodhi smaller-then-nest {
     float: none;
     margin-bottom: 30px;
     text-align: center;
@@ -21,7 +21,7 @@
     @extend %list-in-disguise;
     margin: 0 50px 50px 0;
 
-    @mixin bodhi phone {
+    @mixin bodhi smaller-then-nest {
       margin: 0;
     }
 
@@ -30,7 +30,7 @@
   li {
     border-bottom: 1px solid color($purple l(90%));
 
-    @mixin bodhi phone {
+    @mixin bodhi smaller-then-nest {
       border-bottom: none;
       margin-bottom: 10px;
       position: relative;
@@ -52,7 +52,7 @@
         content: none;
       }
 
-    } /* @mixin bodhi phone */
+    } /* @mixin bodhi smaller-then-nest */
 
   } /* li */
 
@@ -62,7 +62,7 @@
     margin: 15px 15px 15px 0;
     width: 100%;
 
-    @mixin bodhi phone {
+    @mixin bodhi smaller-then-nest {
       display: inline-block;
       font-size: 12px;
       margin: 0;
