@@ -12,6 +12,14 @@ body.splash {
   position: relative;
   min-height: 660px;
 
+  #mobile-menu {
+
+    @mixin bodhi phone {
+      display: none;
+    }
+
+  } /* #mobile-menu */
+
   @mixin bodhi phone {
     min-height: 750px;
   }
@@ -51,11 +59,11 @@ body.splash {
           margin: 0 10px 20px;
         }
 
-      }
+      } /* a */
 
-    }
+    } /* li */
 
-  }
+  } /* #main-navigation  */
 
   #main {
     @extend %nested-margin;

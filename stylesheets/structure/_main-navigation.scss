@@ -26,6 +26,15 @@
     display: none;
   }
 
+  body.mobile-nav-open & {
+      display: block;
+      position: absolute;
+        top: 180px;
+        left: 50%;
+      transform: translateX(-50%);
+      margin: 10px 0 0 0;
+  }
+
   ol {
     @extend %list-in-disguise;
   }
@@ -36,11 +45,22 @@
     text-align: center;
     width: 16%;
 
+    @mixin bodhi phone {
+      width: 100%;
+    }
+
     &:last-child {
       min-width: 50px;
       margin: 0 0 0 10px;
       width: 50px;
-    }
+
+      @mixin bodhi phone {
+        margin: 0;
+        min-width: 100%;
+        width: 100%;
+      }
+
+    } /* &:last-child */
 
   } /* li */
 
@@ -53,6 +73,10 @@
     opacity: 0.9;
     text-transform: uppercase;
     width: 90%;
+
+    @mixin bodhi phone {
+      margin: 0 10px 20px;
+    }
 
     &:not(.icon-link) {
       line-height: 32px;
