@@ -13,12 +13,47 @@ body.splash {
   min-height: 660px;
 
   @mixin bodhi phone {
-    min-height: 100%;
+    min-height: 700px;
   }
 
   #main-navigation {
     clear: both;
     width: 100%;
+
+    @mixin bodhi phone {
+      position: absolute;
+        top: 300px;
+        left: 50%;
+      transform: translateX(-50%);
+      margin: 10px 0 0 0;
+    }
+
+    li {
+
+      @mixin bodhi phone {
+        width: 100%;
+      }
+
+      &:last-child {
+
+        @mixin bodhi phone {
+          margin: 0;
+          min-width: 100%;
+          width: 100%;
+        }
+
+      }
+
+      a {
+
+        @mixin bodhi phone {
+          margin: 0 10px 10px;
+        }
+
+      }
+
+    }
+
   }
 
   #main {
@@ -75,7 +110,13 @@ body.splash {
       top: 50%;
       left: 50%;
     transform: translate(-50%, -50%);
-  }
+
+    @mixin bodhi phone {
+      top: 30px;
+      transform: translateX(-50%);
+    }
+
+  } /* .splash-content */
 
   #page-footer {
     color: $white;
