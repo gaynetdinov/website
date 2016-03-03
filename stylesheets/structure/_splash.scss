@@ -12,10 +12,58 @@ body.splash {
   position: relative;
   min-height: 660px;
 
+  #mobile-menu {
+
+    @mixin bodhi phone {
+      display: none;
+    }
+
+  } /* #mobile-menu */
+
+  @mixin bodhi phone {
+    min-height: 750px;
+  }
+
   #main-navigation {
     clear: both;
     width: 100%;
-  }
+
+    @mixin bodhi phone {
+      display: block;
+      position: absolute;
+        top: 300px;
+        left: 50%;
+      transform: translateX(-50%);
+      margin: 10px 0 0 0;
+    }
+
+    li {
+
+      @mixin bodhi phone {
+        width: 100%;
+      }
+
+      &:last-child {
+
+        @mixin bodhi phone {
+          margin: 0;
+          min-width: 100%;
+          width: 100%;
+        }
+
+      }
+
+      a {
+
+        @mixin bodhi phone {
+          margin: 0 10px 20px;
+        }
+
+      } /* a */
+
+    } /* li */
+
+  } /* #main-navigation  */
 
   #main {
     @extend %nested-margin;
@@ -24,8 +72,14 @@ body.splash {
     padding: 0;
     position: relative;
     text-align: center;
-    background-color: none;
-  }
+    background-color: transparent;
+
+    @mixin bodhi phone {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+  } /* #main */
 
   h1 {
     @extend %image-replacement;
@@ -37,7 +91,13 @@ body.splash {
     margin: 0;
     padding: 0;
     width: 700px;
-  }
+
+    @mixin bodhi phone {
+      height: 174px;
+      width: 300px;
+    }
+
+  } /* h1 */
 
   h2 {
     opacity: 0.8;
@@ -59,7 +119,13 @@ body.splash {
       top: 50%;
       left: 50%;
     transform: translate(-50%, -50%);
-  }
+
+    @mixin bodhi phone {
+      top: 30px;
+      transform: translateX(-50%);
+    }
+
+  } /* .splash-content */
 
   #page-footer {
     color: $white;

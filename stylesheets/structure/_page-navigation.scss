@@ -5,6 +5,12 @@
 #page-navigation {
   float: left;
 
+  @mixin bodhi phone {
+    float: none;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
   .page-navigation-header {
     font-size: 13px;
     font-weight: bold;
@@ -14,17 +20,55 @@
   ol {
     @extend %list-in-disguise;
     margin: 0 50px 50px 0;
-  }
+
+    @mixin bodhi phone {
+      margin: 0;
+    }
+
+  } /* ol */
 
   li {
     border-bottom: 1px solid color($purple l(90%));
-  }
+
+    @mixin bodhi phone {
+      border-bottom: none;
+      margin-bottom: 10px;
+      position: relative;
+      display: inline-block;
+
+      &:after {
+        display: block;
+        content: "";
+        background-color: color($gray l(95%));
+        height: 8px;
+        width: 8px;
+        position: absolute;
+          right: -4px;
+          top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      &:last-child:after {
+        content: none;
+      }
+
+    } /* @mixin bodhi phone */
+
+  } /* li */
 
   a {
     display: block;
     font-size: 14px;
     margin: 15px 15px 15px 0;
     width: 100%;
+
+    @mixin bodhi phone {
+      display: inline-block;
+      font-size: 12px;
+      margin: 0;
+      padding: 0 20px;
+      width: auto;
+    }
 
     &:hover {
       color: $link-color-hover;

@@ -6,11 +6,16 @@
   @extend %clearfix;
   background-attachment: fixed;
   background-color: $green-dark;
-  background-image: url("/img/bg.jpg");
+  background-image: url('/img/bg.jpg');
   background-position:  top center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 103px;
+  transition: height 1s;
+
+  body.mobile-nav-open & {
+    height: 500px;
+  }
 
   h1 {
     @extend %image-replacement;
@@ -24,6 +29,14 @@
     margin: 0;
     padding: 0;
     width: 300px;
-  }
+
+    @mixin bodhi phone {
+      background-position: center center;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+    }
+
+  } /* h1 */
 
 } /* #page-header */

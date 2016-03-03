@@ -7,14 +7,24 @@
   @extend %nested-margin;
   border-radius: 3px;
   padding: 70px 15px 15px;
-}
 
+  @mixin bodhi phone {
+    margin: 0 0 0 0;
+    width: 100%;
+  }
+
+} /* #main */
 
 body.collection,
 body.series {
 
   article {
     margin-left: 200px;
-  }
+
+    @mixin bodhi phone {
+      margin-left: 0;
+    }
+
+  } /* article */
 
 } /* body.collection */
