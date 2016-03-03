@@ -12,7 +12,7 @@
   height: 32px;
   width: 32px;
 
-  @mixin bodhi phone {
+  @mixin bodhi smaller-then-nest {
     display: block;
   }
 
@@ -22,7 +22,7 @@
   float: right;
   margin: 32px 25px 0 0;
 
-  @mixin bodhi phone {
+  @mixin bodhi smaller-then-nest {
     display: none;
   }
 
@@ -45,7 +45,11 @@
     text-align: center;
     width: 16%;
 
-    @mixin bodhi phone {
+    @mixin bodhi smaller-screens {
+      min-width: 120px;
+    }
+
+    @mixin bodhi smaller-then-nest {
       width: 100%;
     }
 
@@ -54,7 +58,7 @@
       margin: 0 0 0 10px;
       width: 50px;
 
-      @mixin bodhi phone {
+      @mixin bodhi smaller-then-nest {
         margin: 0;
         min-width: 100%;
         width: 100%;
@@ -74,7 +78,12 @@
     text-transform: uppercase;
     width: 90%;
 
-    @mixin bodhi phone {
+    @mixin bodhi smaller-screens {
+      font-size: 12px;
+      margin: 0 3%
+    }
+
+    @mixin bodhi smaller-then-nest {
       margin: 0 0 20px 0;
       width: 100%
     }

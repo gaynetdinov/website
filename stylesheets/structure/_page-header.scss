@@ -30,7 +30,7 @@
     padding: 0;
     width: 300px;
 
-    @mixin bodhi phone {
+    @mixin bodhi smaller-then-nest {
       background-position: center center;
       left: 50%;
       transform: translateX(-50%);
