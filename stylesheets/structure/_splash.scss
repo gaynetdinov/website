@@ -37,32 +37,6 @@ body.splash {
       margin: 10px 0 0 0;
     }
 
-    li {
-
-      @mixin bodhi phone {
-        width: 100%;
-      }
-
-      &:last-child {
-
-        @mixin bodhi phone {
-          margin: 0;
-          min-width: 100%;
-          width: 100%;
-        }
-
-      }
-
-      a {
-
-        @mixin bodhi phone {
-          margin: 0 10px 20px;
-        }
-
-      } /* a */
-
-    } /* li */
-
   } /* #main-navigation  */
 
   #main {
@@ -118,6 +92,7 @@ body.splash {
     position: absolute;
       top: 50%;
       left: 50%;
+    text-align: center;
     transform: translate(-50%, -50%);
 
     @mixin bodhi phone {

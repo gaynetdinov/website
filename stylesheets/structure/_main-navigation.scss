@@ -75,7 +75,8 @@
     width: 90%;
 
     @mixin bodhi phone {
-      margin: 0 10px 20px;
+      margin: 0 0 20px 0;
+      width: 100%
     }
 
     &:not(.icon-link) {
