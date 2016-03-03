@@ -8,9 +8,9 @@ $white                          : #fff !default;
 
 /* Grays */
 $gray                           : #a29f99 !default;
-$gray-light                     : color($gray l(20%)) !default;
-$gray-lighter                   : color($gray l(30%)) !default;
-$gray-lightest                  : color($gray l(40%)) !default;
+$gray-light                     : color($gray l(70%)) !default;
+$gray-lighter                   : color($gray l(80%)) !default;
+$gray-lightest                  : color($gray l(90%)) !default;
 $gray-dark                      : color($gray l(-20%)) !default;
 $gray-darker                    : color($gray l(-30%)) !default;
 $gray-darkest                   : color($gray l(-40%)) !default;
