@@ -5,6 +5,10 @@
 #page-navigation {
   float: left;
 
+  @mixin bodhi phone {
+    display: none;
+  }
+
   .page-navigation-header {
     font-size: 13px;
     font-weight: bold;

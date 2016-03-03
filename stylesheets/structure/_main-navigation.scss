@@ -2,6 +2,22 @@
   Structure > Main Navigation
 -------------------------------------------------------------------  */
 
+#mobile-menu {
+  @extend %image-replacement;
+  background-image: url("/img/hamburger.svg");
+  display: none;
+  position: absolute;
+    top: 10px;
+    right: 10px;
+  height: 32px;
+  width: 32px;
+
+  @mixin bodhi phone {
+    display: block;
+  }
+
+} /* #mobile-menu  */
+
 #main-navigation {
   float: right;
   margin: 32px 25px 0 0;

@@ -20,6 +20,11 @@ body.series {
 
   article {
     margin-left: 200px;
-  }
+
+    @mixin bodhi phone {
+      margin-left: 0;
+    }
+
+  } /* article */
 
 } /* body.collection */
