@@ -5,7 +5,7 @@
 $page-with-logo: 1400px;
 $page-width: $nested-width;
 $phone-width-min: 320px;
-$phone-width-max: $phone-width-min + 160;
+$phone-width-max: 480px;
 
 @define-mixin bodhi $breakpoint {
 

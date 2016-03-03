@@ -12,6 +12,10 @@ body.splash {
   position: relative;
   min-height: 660px;
 
+  @mixin bodhi phone {
+    min-height: 100%;
+  }
+
   #main-navigation {
     clear: both;
     width: 100%;
@@ -24,8 +28,14 @@ body.splash {
     padding: 0;
     position: relative;
     text-align: center;
-    background-color: none;
-  }
+    background-color: transparent;
+
+    @mixin bodhi phone {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+  } /* #main */
 
   h1 {
     @extend %image-replacement;
@@ -37,7 +47,13 @@ body.splash {
     margin: 0;
     padding: 0;
     width: 700px;
-  }
+
+    @mixin bodhi phone {
+      height: 174px;
+      width: 300px;
+    }
+
+  } /* h1 */
 
   h2 {
     opacity: 0.8;
