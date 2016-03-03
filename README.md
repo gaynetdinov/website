@@ -38,5 +38,5 @@ git push origin master
 ```
 
 Then, check out
-[https://absithe-graphql.github.io](https://absithe-graphql.github.io)
+ http://absinthe-graphql.org/ ]( http://absinthe-graphql.org/ )
 and make sure you haven't screwed anything up. :-)
