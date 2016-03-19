@@ -30,8 +30,8 @@ Support for Facebook's [Relay](https://facebook.github.io/relay/) framework.
 
 - Code: [https://github.com/absinthe-graphql/absinthe_relay](https://github.com/absinthe-graphql/absinthe_relay)
 - Issues: [https://github.com/absinthe-graphql/absinthe_relay/issues](https://github.com/absinthe-graphql/absinthe_relay/issues)
-- Package: (Not yet released.)
-- Documentation: (Not yet released.)
+- Package: [https://hex.pm/packages/absinthe_relay](https://hex.pm/packages/absinthe_relay)
+- Documentation: [https://hexdocs.pm/absinthe_relay](https://hexdocs.pm/absinthe_relay)
 
 ### Absinthe Example
 
