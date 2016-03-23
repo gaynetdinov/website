@@ -88,6 +88,12 @@ uses headers -- most notably, Authentication.
 
 For more information, see the [Context guide](/guides/context/).
 
+## GraphiQL
+
+See the [Using GraphiQL](http://absinthe-graphql.org/guides/introspection/#using-graphiql)
+section of the [Introspection](http://absinthe-graphql.org/guides/introspection) guide
+to learn how to use the built-in `Absinthe.Plug.GraphiQL` plug.
+
 ## General Usage
 
 This plug supports requests in a number of ways:
