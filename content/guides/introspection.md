@@ -111,10 +111,34 @@ The [GraphiQL project](https://github.com/graphql/graphiql) is
   <figcaption class="description">GraphiQL in action.</figcaption>
 </figure>
 
-<p class="notice">
-We recommend using the pre-built <a href="http://electron.atom.io/">Electron</a>-based wrapper application, <a href="https://github.com/skevy/graphiql-app">GraphiQL.app</a>, which makes it very easy to introspect your
-development and production Absinthe applications.
-</p>
+Absinthe provides GraphiQL via a plug in `absinthe_plug`. See
+See the [Plug and Phoenix Guide](http://absinthe-graphql.org/guides/plug-phoenix)
+for how to install that library. Once installed, usage is simple as:
+
+```elixir
+plug Absinthe.Plug.GraphiQL, schema: MyApp.Schema
+```
+
+If you want to use it at a particular path (in this case `graphiql` in your Phoenix
+router, simply do
+
+```elixir
+# filename: router.ex
+get "/graphiql", Absinthe.Plug.GraphiQL, schema: MyApp.Schema
+```
+
+This can be trivially reserved to just the `:dev` elixir environment by doing:
+
+```elixir
+# filename: router.ex
+if Mix.env == :dev
+  get "/graphiql", Absinthe.Plug.GraphiQL, schema: MyApp.Schema
+end
+```
+
+If you'd prefer to use a desktop application, we recommend using the pre-built
+[Electron](http://electron.atom.io)-based wrapper application,
+[GraphiQL.app](https://github.com/skevy/graphiql-app).
 
 ### GraphQL Hub
 
