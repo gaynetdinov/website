@@ -111,9 +111,8 @@ The [GraphiQL project](https://github.com/graphql/graphiql) is
   <figcaption class="description">GraphiQL in action.</figcaption>
 </figure>
 
-Absinthe provides GraphiQL via a plug in `absinthe_plug`. See
-See the [Plug and Phoenix Guide](http://absinthe-graphql.org/guides/plug-phoenix)
-for how to install that library. Once installed, usage is simple as:
+Absinthe provides GraphiQL via a plug in `absinthe_plug`. See the [Plug and Phoenix Guide](http://absinthe-graphql.org/guides/plug-phoenix)
+for how to install that library. Once installed, usage is simple as
 
 ```elixir
 plug Absinthe.Plug.GraphiQL, schema: MyApp.Schema
