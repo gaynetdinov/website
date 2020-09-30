@@ -37,6 +37,6 @@ git commit -am "A nice commit message"
 git push origin master
 ```
 
-Then, check out
+Then, check out this amazing site
  http://absinthe-graphql.org/ ]( http://absinthe-graphql.org/ )
 and make sure you haven't screwed anything up. :-)
