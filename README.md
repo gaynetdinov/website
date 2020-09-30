@@ -1,11 +1,11 @@
-## Install
+## Installing
 
 ```
 bundle install
 npm install
 ```
 
-## Developing
+##  Start Developing
 
 ```
 gulp
@@ -27,7 +27,7 @@ Then, clone the publishing repository to `output/`:
 git clone git@github.com:absinthe-graphql/absinthe-graphql.github.io.git output
 ```
 
-### Deploying changes
+###  Here Deploying changes
 
 After running `gulp build` or `gulp serve` as usual, simply:
 
