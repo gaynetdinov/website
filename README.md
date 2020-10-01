@@ -1,4 +1,4 @@
-## Install
+## INSTALL
 
 ```
 bundle install
